@@ -1,22 +1,23 @@
-$bg-gray: #F5F5F5;
-$gray: #7B7B7B;
-$font-gray: #6A6A6A;
-$blue: #326EC8;
+$bg-gray: #f5f5f5;
+$gray: #7b7b7b;
+$font-gray: #6a6a6a;
+$blue: #326ec8;
+$sidebar-width: 340px;
 
 @font-face {
-    font-family: "allerLT";
-    src: url('../fonts/Aller_Lt.ttf');
+  font-family: "allerLT";
+  src: url("../fonts/Aller_Lt.ttf");
 }
 
 @font-face {
-    font-family: "Tajawal";
-    src: url('../fonts/Tajawal-Medium.ttf');
+  font-family: "Tajawal";
+  src: url("../fonts/Tajawal-Medium.ttf");
 }
 
 body {
-    font-family: "Tajawal";
-    margin: 0;
-    background-color: $bg-gray;
+  font-family: "Tajawal";
+  margin: 0;
+  background-color: $bg-gray;
 }
 
 p,
@@ -26,258 +27,525 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
+  margin: 0;
 }
 
 /** Common template **/
 .left-nav {
-    background-color: #000000;
-    color: #FFFFFF;
-    height: 100%;
-    max-width: 30%;
+  background-color: #000000;
+  color: #ffffff;
+  height: 100%;
+  position: fixed;
+  width: $sidebar-width;
 
-    &__header,
-    &__image {
-        text-align: center;
+  &__header,
+  &__image {
+    text-align: center;
+  }
+
+  &__header {
+    padding: 30px 0 80px 0;
+
+    img {
+      height: 130px;
+      width: 130px;
     }
 
-    &__header {
-        padding: 30px 0 80px 0;
+    p {
+      font-size: 25px;
+      padding-top: 8px;
+      font-weight: bold;
+    }
+  }
 
-        img {
-            height: 130px;
-            width: 130px;
-        }
-
-        p {
-            font-size: 25px;
-            padding-top: 8px;
-            font-weight: bold;
-        }
+  &__image {
+    img {
+      width: calc(100% - 80px);
     }
 
-    &__image {
-        img {
-            width: calc(100% - 80px);
-        }
+    p {
+      font-size: 19px;
+      padding-top: 8px;
+      color: #d2d2d2;
+    }
+  }
 
-        p {
-            font-size: 19px;
-            padding-top: 8px;
-            color: #D2D2D2;
-        }
+  &__timeline {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+    align-items: center;
+
+    a {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background-color: $gray;
+      margin: 0 5px;
     }
 
-    &__timeline {
-        display: flex;
-        justify-content: center;
-        margin-top: 45px;
-        align-items: center;
-
-        a {
-            height: 10px;
-            width: 10px;
-            border-radius: 50%;
-            background-color: $gray;
-            margin: 0 5px;
-        }
-
-        .active {
-            background-color: #FFFFFF;
-            color: #000000;
-            height: 18px;
-            width: 18px;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 13px;
-            text-decoration: none;
-        }
+    .active {
+      background-color: #ffffff;
+      color: #000000;
+      height: 18px;
+      width: 18px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      text-decoration: none;
     }
+  }
 }
 
 .wrapper {
-    height: 100vh;
-    display: flex;
+  height: 100vh;
 
-    .page-content {
-        width: 100%;
-        height: 100%;
+  .page-content {
+    width: calc(100% - #{$sidebar-width});
+    margin-left: $sidebar-width;
+    height: 100%;
+
+    .section-title {
+      text-transform: uppercase;
+      text-align: center;
     }
+  }
 }
 
 .contine-btn {
-    background-color: $blue;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    margin-top: 270px;
-    box-shadow: 0px 3px 6px #656565;
-    cursor: pointer;
-    display: none;
+  background-color: $blue;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 270px;
+  box-shadow: 0px 3px 6px #656565;
+  cursor: pointer;
+  display: none;
 
-    i {
-        color: white;
-        font-size: 34px;
-    }
+  i {
+    color: white;
+    font-size: 34px;
+  }
+}
+
+.grid {
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
 }
 
 /** Calendar Event Page**/
 .calendar-input-container {
+  .page-content {
+    display: flex;
+    align-items: center;
+  }
 
-    .page-content {
+  #calendarEvents {
+    display: flex;
+    margin: 0;
+  }
+
+  #sidebarToggler,
+  .event-icon {
+    display: none;
+  }
+
+  .calendar-sidebar,
+  #calendarEvents {
+    background-color: transparent;
+    box-shadow: none;
+    color: $font-gray;
+    position: relative;
+  }
+
+  .calendar-sidebar {
+    .calendar-months {
+      .month {
+        text-align: center;
+
+        &:hover {
+          background-color: #bcbcbc;
+        }
+      }
+
+      .active-month {
+        background-color: #bcbcbc;
+        color: #ffffff;
+      }
+    }
+  }
+
+  #calendarEvents {
+    .icon-button {
+      width: 15px;
+      height: 15px;
+
+      .chevron-arrow-right,
+      .chevron-arrow-left {
+        border-right: 3px solid $font-gray;
+        border-bottom: 3px solid $font-gray;
+      }
+    }
+
+    .calendar-inner,
+    .calendar-events {
+      background-color: transparent;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .calendar-inner {
+      padding-right: 0;
+      box-shadow: none;
+      flex: 1;
+      margin: 0;
+
+      th[colspan="7"] {
+        text-transform: capitalize;
+      }
+
+      .calendar-today {
+        background-color: #000000;
+
+        &:hover {
+          background-color: #424242;
+        }
+      }
+    }
+
+    .calendar-events {
+      position: relative;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 0;
+
+      .event-header {
+        margin-bottom: 30px;
+
+        p {
+          color: #000000;
+          font-size: 28px;
+        }
+      }
+
+      .event-container {
+        &:hover {
+          background-color: transparent;
+          box-shadow: none;
+        }
+
+        .event-info {
+          padding: 10px 25px;
+          background-color: #6a6a6a;
+          color: #ffffff;
+          border-radius: 30px;
+
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .event-selected {
+      .event-info {
+        position: relative;
+        padding-left: 42px !important;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          left: 10px;
+          height: 25px;
+          width: 25px;
+          background-image: url("/images/checked-circle.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          top: 13px;
+        }
+      }
+
+      .contine-btn {
+        display: flex;
+      }
+    }
+
+    .uncheck-event {
+      .event-info {
+        padding-left: 25px !important;
+
+        &::before {
+          content: "";
+          background-image: none;
+        }
+      }
+    }
+  }
+}
+
+/** Person Categories page**/
+#personCategory {
+  height: 100%;
+  width: 100%;
+  padding: 5% 5%;
+
+  .section-title {
+    margin-bottom: 3rem;
+  }
+
+  .category {
+    width: 150px;
+
+    &__image {
+      width: 110px;
+      height: 110px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .overlay {
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
         display: flex;
         align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        opacity: 0;
+
+        img {
+          opacity: 0.8;
+          width: 45%;
+        }
+      }
     }
 
-    #calendarEvents {
+    &__name {
+      display: block;
+      text-align: center;
+      margin-top: 0.8rem;
+      color: #6a6a6a;
+      font-weight: normal;
+    }
+
+    &.selected {
+      .category__image {
+        .overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .action-buttons {
+    width: 100%;
+
+    .action-button {
+      position: fixed;
+      right: 5%;
+      bottom: 5%;
+      width: 70px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+/** Products page**/
+#productPage {
+  height: 100%;
+  width: 100%;
+  padding: 2% 5%;
+
+  .section-title {
+    margin-bottom: 1rem;
+  }
+
+  .action-buttons {
+    width: 100%;
+
+    .action-button {
+      position: fixed;
+      right: 5%;
+      top: 5%;
+      width: 70px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .search {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+
+    &__category {
+      display: inline-block;
+      height: 36px;
+      border: 1px solid #6a6a6a;
+      border-radius: 2px;
+      color: #6a6a6a;
+      padding: 0 15px;
+    }
+
+    &__input {
+      height: 36px;
+      width: 300px;
+      border: 1px solid #6a6a6a;
+      border-radius: 2px;
+      position: relative;
+
+      input {
+        height: 100%;
+        width: 100%;
+        border: none;
+        outline: none;
+        color: #6a6a6a;
+        padding: 0 35px 0 15px;
+      }
+
+      .search-icon {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        width: 16px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .product {
+    width: 23%;
+    background: #fff;
+    cursor: pointer;
+
+    &__image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin: 0;
+    }
+
+    &__details {
+      padding: 0px 10px 8px;
+      position: relative;
+      height: 75px;
+
+      .checked-icon {
+        position: absolute;
+        width: 36px;
+        right: 10px;
+        top: -26px;
+        opacity: 0;
+        transition: all 0.3s;
+        pointer-events: none;
+      }
+
+      &__title {
+        font-weight: normal;
+      }
+
+      &__description {
+        font-size: 12px;
+      }
+
+      &__footer {
+        margin-top: 5px;
         display: flex;
-        margin: 0;
+        justify-content: space-between;
+        align-items: center;
+
+        .price {
+          font-size: 14px;
+        }
+
+        .category {
+          font-size: 11px;
+          padding: 2px 8px;
+          border-radius: 25px;
+          border: 1px solid #000;
+        }
+      }
     }
 
-    #sidebarToggler,
-    .event-icon {
-        display: none;
+    &.selected {
+      .checked-icon {
+        opacity: 1;
+      }
     }
+  }
 
-    .calendar-sidebar,
-    #calendarEvents {
-        background-color: transparent;
-        box-shadow: none;
-        color: $font-gray;
-        position: relative;
+  .pagination {
+    display: flex;
+    margin: 3rem 0;
+    justify-content: center;
+    align-items: center;
+
+    .item {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      margin: 0 6px;
+      border: 1px solid #707070;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      background: #fff;
+      cursor: pointer;
+
+      &.active {
+        color: #fff;
+        background: #000;
+        cursor: default;
+      }
+
+      &.bold {
+        font-weight: bold;
+      }
     }
-
-    .calendar-sidebar {
-        .calendar-months {
-            .month {
-                text-align: center;
-
-                &:hover {
-                    background-color: #BCBCBC
-                }
-            }
-
-            .active-month {
-                background-color: #BCBCBC;
-                color: #FFFFFF;
-            }
-        }
-    }
-
-    #calendarEvents {
-        .icon-button {
-            width: 15px;
-            height: 15px;
-
-            .chevron-arrow-right,
-            .chevron-arrow-left {
-                border-right: 3px solid $font-gray;
-                border-bottom: 3px solid $font-gray;
-            }
-        }
-
-        .calendar-inner,
-        .calendar-events {
-            background-color: transparent;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .calendar-inner {
-            padding-right: 0;
-            box-shadow: none;
-            flex: 1;
-            margin: 0;
-
-            th[colspan="7"] {
-                text-transform: capitalize;
-            }
-
-            .calendar-today {
-                background-color: #000000;
-
-                &:hover {
-                    background-color: #424242;
-                }
-            }
-        }
-
-        .calendar-events {
-            position: relative;
-            width: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-left: 0;
-
-            .event-header {
-                margin-bottom: 30px;
-
-                p {
-                    color: #000000;
-                    font-size: 28px;
-                }
-            }
-
-            .event-container {
-                &:hover {
-                    background-color: transparent;
-                    box-shadow: none;
-                }
-
-                .event-info {
-                    padding: 10px 25px;
-                    background-color: #6A6A6A;
-                    color: #FFFFFF;
-                    border-radius: 30px;
-
-                    p {
-                        font-size: 20px;
-                    }
-                }
-            }
-        }
-
-        .event-selected {
-            .event-info {
-                position: relative;
-                padding-left: 42px !important;
-
-                &::before {
-                    content: '';
-                    display: inline-block;
-                    position: absolute;
-                    left: 10px;
-                    height: 25px;
-                    width: 25px;
-                    background-image: url('/images/checked-circle.png');
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    top: 13px;
-                }
-            }
-
-            .contine-btn {
-                display: flex;
-            }
-        }
-
-        .uncheck-event {
-            .event-info {
-                padding-left: 25px !important;
-
-
-                &::before {
-                    content: '';
-                    background-image: none;
-                }
-            }
-        }
-    }
+  }
 }

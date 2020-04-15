@@ -11,7 +11,7 @@
 body {
   font-family: "Tajawal";
   margin: 0;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 p,
@@ -27,9 +27,10 @@ h6 {
 /** Common template **/
 .left-nav {
   background-color: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
   height: 100%;
-  max-width: 30%;
+  position: fixed;
+  width: 340px;
 }
 
 .left-nav__header, .left-nav__image {
@@ -58,7 +59,7 @@ h6 {
 .left-nav__image p {
   font-size: 19px;
   padding-top: 8px;
-  color: #D2D2D2;
+  color: #d2d2d2;
 }
 
 .left-nav__timeline {
@@ -78,12 +79,12 @@ h6 {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background-color: #7B7B7B;
+  background-color: #7b7b7b;
   margin: 0 5px;
 }
 
 .left-nav__timeline .active {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #000000;
   height: 18px;
   width: 18px;
@@ -103,18 +104,21 @@ h6 {
 
 .wrapper {
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .wrapper .page-content {
-  width: 100%;
+  width: calc(100% - 340px);
+  margin-left: 340px;
   height: 100%;
 }
 
+.wrapper .page-content .section-title {
+  text-transform: uppercase;
+  text-align: center;
+}
+
 .contine-btn {
-  background-color: #326EC8;
+  background-color: #326ec8;
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -138,6 +142,16 @@ h6 {
 .contine-btn i {
   color: white;
   font-size: 34px;
+}
+
+.grid .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 /** Calendar Event Page**/
@@ -167,7 +181,7 @@ h6 {
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #6A6A6A;
+  color: #6a6a6a;
   position: relative;
 }
 
@@ -176,12 +190,12 @@ h6 {
 }
 
 .calendar-input-container .calendar-sidebar .calendar-months .month:hover {
-  background-color: #BCBCBC;
+  background-color: #bcbcbc;
 }
 
 .calendar-input-container .calendar-sidebar .calendar-months .active-month {
-  background-color: #BCBCBC;
-  color: #FFFFFF;
+  background-color: #bcbcbc;
+  color: #ffffff;
 }
 
 .calendar-input-container #calendarEvents .icon-button {
@@ -191,8 +205,8 @@ h6 {
 
 .calendar-input-container #calendarEvents .icon-button .chevron-arrow-right,
 .calendar-input-container #calendarEvents .icon-button .chevron-arrow-left {
-  border-right: 3px solid #6A6A6A;
-  border-bottom: 3px solid #6A6A6A;
+  border-right: 3px solid #6a6a6a;
+  border-bottom: 3px solid #6a6a6a;
 }
 
 .calendar-input-container #calendarEvents .calendar-inner,
@@ -257,8 +271,8 @@ h6 {
 
 .calendar-input-container #calendarEvents .calendar-events .event-container .event-info {
   padding: 10px 25px;
-  background-color: #6A6A6A;
-  color: #FFFFFF;
+  background-color: #6a6a6a;
+  color: #ffffff;
   border-radius: 30px;
 }
 
@@ -272,7 +286,7 @@ h6 {
 }
 
 .calendar-input-container #calendarEvents .event-selected .event-info::before {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   left: 10px;
@@ -295,7 +309,291 @@ h6 {
 }
 
 .calendar-input-container #calendarEvents .uncheck-event .event-info::before {
-  content: '';
+  content: "";
   background-image: none;
+}
+
+/** Person Categories page**/
+#personCategory {
+  height: 100%;
+  width: 100%;
+  padding: 5% 5%;
+}
+
+#personCategory .section-title {
+  margin-bottom: 3rem;
+}
+
+#personCategory .category {
+  width: 150px;
+}
+
+#personCategory .category__image {
+  width: 110px;
+  height: 110px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+#personCategory .category__image img {
+  width: 100%;
+  height: 100%;
+}
+
+#personCategory .category__image .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+#personCategory .category__image .overlay img {
+  opacity: 0.8;
+  width: 45%;
+}
+
+#personCategory .category__name {
+  display: block;
+  text-align: center;
+  margin-top: 0.8rem;
+  color: #6a6a6a;
+  font-weight: normal;
+}
+
+#personCategory .category.selected .category__image .overlay {
+  opacity: 1;
+}
+
+#personCategory .action-buttons {
+  width: 100%;
+}
+
+#personCategory .action-buttons .action-button {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 70px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#personCategory .action-buttons .action-button:hover {
+  opacity: 0.8;
+}
+
+#personCategory .action-buttons .action-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/** Products page**/
+#productPage {
+  height: 100%;
+  width: 100%;
+  padding: 2% 5%;
+}
+
+#productPage .section-title {
+  margin-bottom: 1rem;
+}
+
+#productPage .action-buttons {
+  width: 100%;
+}
+
+#productPage .action-buttons .action-button {
+  position: fixed;
+  right: 5%;
+  top: 5%;
+  width: 70px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#productPage .action-buttons .action-button:hover {
+  opacity: 0.8;
+}
+
+#productPage .action-buttons .action-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#productPage .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 4rem;
+}
+
+#productPage .search__category {
+  display: inline-block;
+  height: 36px;
+  border: 1px solid #6a6a6a;
+  border-radius: 2px;
+  color: #6a6a6a;
+  padding: 0 15px;
+}
+
+#productPage .search__input {
+  height: 36px;
+  width: 300px;
+  border: 1px solid #6a6a6a;
+  border-radius: 2px;
+  position: relative;
+}
+
+#productPage .search__input input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #6a6a6a;
+  padding: 0 35px 0 15px;
+}
+
+#productPage .search__input .search-icon {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 16px;
+  cursor: pointer;
+}
+
+#productPage .product {
+  width: 23%;
+  background: #fff;
+  cursor: pointer;
+}
+
+#productPage .product__image {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0;
+}
+
+#productPage .product__details {
+  padding: 0px 10px 8px;
+  position: relative;
+  height: 75px;
+}
+
+#productPage .product__details .checked-icon {
+  position: absolute;
+  width: 36px;
+  right: 10px;
+  top: -26px;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+#productPage .product__details__title {
+  font-weight: normal;
+}
+
+#productPage .product__details__description {
+  font-size: 12px;
+}
+
+#productPage .product__details__footer {
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#productPage .product__details__footer .price {
+  font-size: 14px;
+}
+
+#productPage .product__details__footer .category {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 25px;
+  border: 1px solid #000;
+}
+
+#productPage .product.selected .checked-icon {
+  opacity: 1;
+}
+
+#productPage .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 3rem 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#productPage .pagination .item {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin: 0 6px;
+  border: 1px solid #707070;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 13px;
+  background: #fff;
+  cursor: pointer;
+}
+
+#productPage .pagination .item.active {
+  color: #fff;
+  background: #000;
+  cursor: default;
+}
+
+#productPage .pagination .item.bold {
+  font-weight: bold;
 }
 /*# sourceMappingURL=main.css.map */
