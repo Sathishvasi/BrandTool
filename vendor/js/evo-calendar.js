@@ -318,7 +318,7 @@
                 if(!hasEventToday) {
                     eventHTML += '<p>No event for this day</p>';
                 }
-                eventHTML += '</div><div id="calendar-continue-btn" class="contine-btn"><i class="fas fa-chevron-right"></i></div>';
+                eventHTML += '</div><div id="calendar-continue-btn" class="continue contine-btn"><i class="fas fa-chevron-right"></i></div>';
                 _.$eventHTML = eventHTML;
             }
         }

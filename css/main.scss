@@ -14,6 +14,12 @@ $sidebar-width: 340px;
   src: url("../fonts/Tajawal-Medium.ttf");
 }
 
+input,
+option,
+select {
+  font-family: "Tajawal";
+}
+
 body {
   font-family: "Tajawal";
   margin: 0;
@@ -433,11 +439,12 @@ h6 {
 
     &__input {
       height: 36px;
-      width: 300px;
+      width: 310px;
       border: 1px solid #6a6a6a;
       border-radius: 2px;
       position: relative;
-
+      border-left: none;
+      
       input {
         height: 100%;
         width: 100%;
