@@ -1,0 +1,283 @@
+$bg-gray: #F5F5F5;
+$gray: #7B7B7B;
+$font-gray: #6A6A6A;
+$blue: #326EC8;
+
+@font-face {
+    font-family: "allerLT";
+    src: url('../fonts/Aller_Lt.ttf');
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url('../fonts/Tajawal-Medium.ttf');
+}
+
+body {
+    font-family: "Tajawal";
+    margin: 0;
+    background-color: $bg-gray;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+/** Common template **/
+.left-nav {
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 100%;
+    max-width: 30%;
+
+    &__header,
+    &__image {
+        text-align: center;
+    }
+
+    &__header {
+        padding: 30px 0 80px 0;
+
+        img {
+            height: 130px;
+            width: 130px;
+        }
+
+        p {
+            font-size: 25px;
+            padding-top: 8px;
+            font-weight: bold;
+        }
+    }
+
+    &__image {
+        img {
+            width: calc(100% - 80px);
+        }
+
+        p {
+            font-size: 19px;
+            padding-top: 8px;
+            color: #D2D2D2;
+        }
+    }
+
+    &__timeline {
+        display: flex;
+        justify-content: center;
+        margin-top: 45px;
+        align-items: center;
+
+        a {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: $gray;
+            margin: 0 5px;
+        }
+
+        .active {
+            background-color: #FFFFFF;
+            color: #000000;
+            height: 18px;
+            width: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            text-decoration: none;
+        }
+    }
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+
+    .page-content {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.contine-btn {
+    background-color: $blue;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 270px;
+    box-shadow: 0px 3px 6px #656565;
+    cursor: pointer;
+    display: none;
+
+    i {
+        color: white;
+        font-size: 34px;
+    }
+}
+
+/** Calendar Event Page**/
+.calendar-input-container {
+
+    .page-content {
+        display: flex;
+        align-items: center;
+    }
+
+    #calendarEvents {
+        display: flex;
+        margin: 0;
+    }
+
+    #sidebarToggler,
+    .event-icon {
+        display: none;
+    }
+
+    .calendar-sidebar,
+    #calendarEvents {
+        background-color: transparent;
+        box-shadow: none;
+        color: $font-gray;
+        position: relative;
+    }
+
+    .calendar-sidebar {
+        .calendar-months {
+            .month {
+                text-align: center;
+
+                &:hover {
+                    background-color: #BCBCBC
+                }
+            }
+
+            .active-month {
+                background-color: #BCBCBC;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    #calendarEvents {
+        .icon-button {
+            width: 15px;
+            height: 15px;
+
+            .chevron-arrow-right,
+            .chevron-arrow-left {
+                border-right: 3px solid $font-gray;
+                border-bottom: 3px solid $font-gray;
+            }
+        }
+
+        .calendar-inner,
+        .calendar-events {
+            background-color: transparent;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .calendar-inner {
+            padding-right: 0;
+            box-shadow: none;
+            flex: 1;
+            margin: 0;
+
+            th[colspan="7"] {
+                text-transform: capitalize;
+            }
+
+            .calendar-today {
+                background-color: #000000;
+
+                &:hover {
+                    background-color: #424242;
+                }
+            }
+        }
+
+        .calendar-events {
+            position: relative;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 0;
+
+            .event-header {
+                margin-bottom: 30px;
+
+                p {
+                    color: #000000;
+                    font-size: 28px;
+                }
+            }
+
+            .event-container {
+                &:hover {
+                    background-color: transparent;
+                    box-shadow: none;
+                }
+
+                .event-info {
+                    padding: 10px 25px;
+                    background-color: #6A6A6A;
+                    color: #FFFFFF;
+                    border-radius: 30px;
+
+                    p {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .event-selected {
+            .event-info {
+                position: relative;
+                padding-left: 42px !important;
+
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    left: 10px;
+                    height: 25px;
+                    width: 25px;
+                    background-image: url('/images/checked-circle.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    top: 13px;
+                }
+            }
+
+            .contine-btn {
+                display: flex;
+            }
+        }
+
+        .uncheck-event {
+            .event-info {
+                padding-left: 25px !important;
+
+
+                &::before {
+                    content: '';
+                    background-image: none;
+                }
+            }
+        }
+    }
+}
