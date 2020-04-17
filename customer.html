@@ -14,27 +14,65 @@
   </head>
 
   <body>
-    <div class="calendar-input-container wrapper">
+    <div class="wrapper">
       <div class="left-nav">
         <div class="left-nav__header">
           <img src="images/logo.png" alt="Logo" />
           <p>Brand Copy Writing</p>
         </div>
         <div class="left-nav__image">
-          <img src="images/image-removebg-preview.png" alt="Calendar event" />
-          <p>Select your calendar Event</p>
+          <img src="images/customers.png" alt="Calendar event" />
+          <p>Select Customer Type</p>
         </div>
         <div class="left-nav__timeline">
-          <a href="#" class="active">1</a>
-          <a href="#"></a>
-          <a href="#"></a>
+          <a href="/index.html"></a>
+          <a href="/person.html"></a>
+          <a href="#" class="active">3</a>
           <a href="#"></a>
           <a href="#"></a>
           <a href="#"></a>
         </div>
       </div>
-      <div class="page-content">
-        <div id="calendarEvents"></div>
+      <div class="page-content padding" id="customerPage">
+        <h2 class="section-title">Customer Type</h2>
+        <div class="grid centered">
+          <div class="row">
+            <div class="item">
+              <div class="item__image padding">
+                <img src="images/retention.svg" alt="item" />
+                <div class="overlay">
+                  <img
+                    class="overlay__image"
+                    src="images/check.svg"
+                    alt="check"
+                  />
+                </div>
+              </div>
+              <h3 class="item__name">Retention</h3>
+            </div>
+            <div class="item">
+              <div class="item__image padding">
+                <img src="images/acquisition.svg" alt="item" />
+                <div class="overlay">
+                  <img
+                    class="overlay__image"
+                    src="images/check.svg"
+                    alt="check"
+                  />
+                </div>
+              </div>
+              <h3 class="item__name">Acquisition</h3>
+            </div>
+          </div>
+        </div>
+        <div class="action-buttons">
+          <img
+            class="action-button continue hidden"
+            src="images/next.svg"
+            alt="next"
+          />
+          <img class="action-button skip" src="images/skip.svg" alt="next" />
+        </div>
       </div>
     </div>
 
@@ -43,9 +81,7 @@
     <!--===============================================================================================-->
     <script src="vendor/js/font-awesome.js"></script>
     <!--===============================================================================================-->
-    <script src="vendor/js/evo-calendar.js"></script>
-    <!--===============================================================================================-->
-    <script src="js/calendar-input.js"></script>
+    <script src="js/customer-input.js"></script>
     <!--===============================================================================================-->
     <script src="js/main.js"></script>
     <!--===============================================================================================-->

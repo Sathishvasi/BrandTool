@@ -14,27 +14,42 @@
   </head>
 
   <body>
-    <div class="calendar-input-container wrapper">
+    <div class="wrapper">
       <div class="left-nav">
         <div class="left-nav__header">
           <img src="images/logo.png" alt="Logo" />
           <p>Brand Copy Writing</p>
         </div>
         <div class="left-nav__image">
-          <img src="images/image-removebg-preview.png" alt="Calendar event" />
-          <p>Select your calendar Event</p>
+          <img src="images/customers.png" alt="Calendar event" />
+          <p>Add Keywords</p>
         </div>
         <div class="left-nav__timeline">
-          <a href="#" class="active">1</a>
-          <a href="#"></a>
-          <a href="#"></a>
+          <a href="/index.html"></a>
+          <a href="/person.html"></a>
+          <a href="#" class="active">3</a>
           <a href="#"></a>
           <a href="#"></a>
           <a href="#"></a>
         </div>
       </div>
-      <div class="page-content">
-        <div id="calendarEvents"></div>
+      <div class="page-content padding" id="keywordPage">
+        <h2 class="section-title">Keywords</h2>
+        <div class="keyword">
+          <input
+            type="text"
+            class="keyword__input"
+            placeholder="Add keywords..."
+          />
+        </div>
+        <div class="action-buttons">
+          <img
+            class="action-button continue hidden"
+            src="images/next.svg"
+            alt="next"
+          />
+          <img class="action-button skip" src="images/skip.svg" alt="next" />
+        </div>
       </div>
     </div>
 
@@ -42,10 +57,6 @@
     <script src="vendor/js/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
     <script src="vendor/js/font-awesome.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/js/evo-calendar.js"></script>
-    <!--===============================================================================================-->
-    <script src="js/calendar-input.js"></script>
     <!--===============================================================================================-->
     <script src="js/main.js"></script>
     <!--===============================================================================================-->

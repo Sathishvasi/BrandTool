@@ -60,6 +60,9 @@ h6 {
 
 .left-nav__image img {
   width: calc(100% - 80px);
+  height: 160px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .left-nav__image p {
@@ -121,6 +124,7 @@ h6 {
 .wrapper .page-content .section-title {
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .contine-btn {
@@ -158,6 +162,120 @@ h6 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 2rem;
+}
+
+.grid .row .item {
+  width: 150px;
+}
+
+.grid .row .item__image {
+  width: 110px;
+  height: 110px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background: #fff;
+}
+
+.grid .row .item__image.padding img:not(.overlay__image) {
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 0.65rem;
+}
+
+.grid .row .item__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.grid .row .item__image img:not(.overlay__image) {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.grid .row .item__image .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.grid .row .item__image .overlay img {
+  opacity: 0.8;
+  width: 45%;
+}
+
+.grid .row .item__name {
+  display: block;
+  text-align: center;
+  margin-top: 0.8rem;
+  color: #6a6a6a;
+  font-weight: normal;
+}
+
+.grid .row .item.selected .item__image .overlay {
+  opacity: 1;
+}
+
+.grid.centered {
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 4rem;
+}
+
+.grid.centered .row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.grid.centered .row .item {
+  margin: 0 1.5rem;
+}
+
+.action-buttons {
+  width: 100%;
+}
+
+.action-buttons .action-button {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 70px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.action-buttons .action-button:hover {
+  opacity: 0.8;
+}
+
+.action-buttons .action-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.padding {
+  padding: 2% 5%;
 }
 
 /** Calendar Event Page**/
@@ -319,130 +437,9 @@ h6 {
   background-image: none;
 }
 
-/** Person Categories page**/
-#personCategory {
-  height: 100%;
-  width: 100%;
-  padding: 5% 5%;
-}
-
-#personCategory .section-title {
-  margin-bottom: 3rem;
-}
-
-#personCategory .category {
-  width: 150px;
-}
-
-#personCategory .category__image {
-  width: 110px;
-  height: 110px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-}
-
-#personCategory .category__image img {
-  width: 100%;
-  height: 100%;
-}
-
-#personCategory .category__image .overlay {
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  opacity: 0;
-}
-
-#personCategory .category__image .overlay img {
-  opacity: 0.8;
-  width: 45%;
-}
-
-#personCategory .category__name {
-  display: block;
-  text-align: center;
-  margin-top: 0.8rem;
-  color: #6a6a6a;
-  font-weight: normal;
-}
-
-#personCategory .category.selected .category__image .overlay {
-  opacity: 1;
-}
-
-#personCategory .action-buttons {
-  width: 100%;
-}
-
-#personCategory .action-buttons .action-button {
-  position: fixed;
-  right: 5%;
-  bottom: 5%;
-  width: 70px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-#personCategory .action-buttons .action-button:hover {
-  opacity: 0.8;
-}
-
-#personCategory .action-buttons .action-button.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
 /** Products page**/
-#productPage {
-  height: 100%;
-  width: 100%;
-  padding: 2% 5%;
-}
-
 #productPage .section-title {
   margin-bottom: 1rem;
-}
-
-#productPage .action-buttons {
-  width: 100%;
-}
-
-#productPage .action-buttons .action-button {
-  position: fixed;
-  right: 5%;
-  top: 5%;
-  width: 70px;
-  cursor: pointer;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-#productPage .action-buttons .action-button:hover {
-  opacity: 0.8;
-}
-
-#productPage .action-buttons .action-button.hidden {
-  opacity: 0;
-  pointer-events: none;
 }
 
 #productPage .search {
@@ -456,7 +453,7 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 #productPage .search__category {
@@ -565,7 +562,7 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 3rem 0;
+  margin-top: 4rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -602,5 +599,33 @@ h6 {
 
 #productPage .pagination .item.bold {
   font-weight: bold;
+}
+
+/** Search page**/
+#keywordPage .keyword {
+  display: block;
+  margin: 5rem auto 0;
+  width: 40rem;
+  height: 3rem;
+}
+
+#keywordPage .keyword__input {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1.8rem 4rem 1.8rem 1.8rem;
+  font-size: 20px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#keywordPage .keyword__input:hover, #keywordPage .keyword__input:focus {
+  -webkit-box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
 }
 /*# sourceMappingURL=main.css.map */
