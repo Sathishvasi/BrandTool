@@ -18,7 +18,17 @@
 
       case path === 'product.html':
         localStorage.setItem('productInput', $('.product.selected .product__details__title').text());
-        window.location.href = '/';
+        window.location.href = '/notification.html';
+        break;
+
+      case path === 'notification.html':
+        // localStorage.setItem('productInput', $('.product.selected .product__details__title').text());
+        window.location.href = '/customer.html';
+        break;
+
+      case path === 'customer.html':
+        // localStorage.setItem('productInput', $('.product.selected .product__details__title').text());
+        window.location.href = '/keywords.html';
         break;
     }
   });

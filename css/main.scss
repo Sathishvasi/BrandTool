@@ -14,6 +14,14 @@ $sidebar-width: 340px;
   src: url("../fonts/Tajawal-Medium.ttf");
 }
 
+.acs-tools-page .page .content .content-container .content-container-inner {
+  width: 100%;
+}
+
+.acs-tools-page .page .content .content-container {
+  padding-top: 0;
+}
+
 input,
 option,
 select {
@@ -67,7 +75,7 @@ h6 {
   &__image {
     img {
       width: calc(100% - 80px);
-      height: 160px;
+      height: 200px;
       object-fit: contain;
     }
 
@@ -518,37 +526,6 @@ h6 {
     &.selected {
       .checked-icon {
         opacity: 1;
-      }
-    }
-  }
-
-  .pagination {
-    display: flex;
-    margin-top: 4rem;
-    justify-content: center;
-    align-items: center;
-
-    .item {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      margin: 0 6px;
-      border: 1px solid #707070;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      background: #fff;
-      cursor: pointer;
-
-      &.active {
-        color: #fff;
-        background: #000;
-        cursor: default;
-      }
-
-      &.bold {
-        font-weight: bold;
       }
     }
   }
