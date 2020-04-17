@@ -593,4 +593,103 @@ h6 {
   -webkit-box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
 }
+
+/** Output page**/
+#outputPage .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#outputPage .tabs .item {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #f8f8f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 1.5rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 2px solid #e4e4e4;
+}
+
+#outputPage .tabs .item.active {
+  background: white;
+  border: 2px solid #94b7d4;
+  cursor: default;
+}
+
+#outputPage .tabs .item img {
+  width: 60%;
+  height: 60%;
+}
+
+#outputPage .taglines {
+  margin-top: 2.5rem;
+}
+
+#outputPage .taglines .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#outputPage .taglines .row .tag {
+  width: 300px;
+  height: 120px;
+  padding: 1rem;
+  margin: 1.2rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #e4e4e4;
+}
+
+#outputPage .taglines .row .tag .title {
+  text-align: center;
+  color: dimgray;
+  font-weight: normal;
+}
+
+#outputPage .taglines .row .tag .actions {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1.4rem;
+}
+
+#outputPage .taglines .row .tag .actions img {
+  width: 30px;
+  height: 30px;
+  margin: 0 0.4rem;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0.7;
+}
+
+#outputPage .taglines .row .tag .actions img:hover {
+  opacity: 1;
+}
 /*# sourceMappingURL=main.css.map */
