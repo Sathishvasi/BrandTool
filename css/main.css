@@ -593,4 +593,269 @@ h6 {
   -webkit-box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
 }
+
+/** Output page**/
+#outputPage .score-details {
+  display: none;
+  margin-top: 100px;
+  position: relative;
+}
+
+#outputPage .score-details > h3 {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #6d6d6d;
+  font-size: 23px;
+}
+
+#outputPage .score-details .target,
+#outputPage .score-details .progress {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#outputPage .score-details .progress {
+  margin-top: 5px;
+}
+
+#outputPage .score-details .progress .perc {
+  position: absolute;
+  display: none;
+  top: 0;
+  line-height: 30px;
+  right: 10px;
+}
+
+#outputPage .score-details .progress .container {
+  position: relative;
+  width: 80%;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+#outputPage .score-details .progress .container:after {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  line-height: 30px;
+}
+
+#outputPage .score-details .progress .fillmult {
+  height: 100%;
+  width: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  line-height: 30px;
+  text-align: left;
+  color: #ffffff;
+}
+
+#outputPage .score-details .progress .fillmult span {
+  padding-left: 10px;
+}
+
+#outputPage .score-details .progress .fillmult span b {
+  font-weight: normal;
+}
+
+#outputPage .sms-content,
+#outputPage .push-content {
+  display: none;
+}
+
+#outputPage .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#outputPage .tabs .item {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #f8f8f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 1.5rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: 2px solid #e4e4e4;
+}
+
+#outputPage .tabs .item.active {
+  background: #313131;
+  border: 2px solid #94b7d4;
+  cursor: default;
+}
+
+#outputPage .tabs .item img {
+  width: 60%;
+  height: 60%;
+}
+
+#outputPage .taglines {
+  margin-top: 2.5rem;
+}
+
+#outputPage .taglines .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#outputPage .taglines .row .tag {
+  width: 300px;
+  height: 120px;
+  padding: 1rem;
+  margin: 1.2rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #e4e4e4;
+}
+
+#outputPage .taglines .row .tag .title {
+  text-align: center;
+  color: dimgray;
+  font-weight: normal;
+}
+
+#outputPage .taglines .row .tag .actions {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1.4rem;
+}
+
+#outputPage .taglines .row .tag .actions img {
+  width: 30px;
+  height: 30px;
+  margin: 0 0.4rem;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0.7;
+}
+
+#outputPage .taglines .row .tag .actions img:hover {
+  opacity: 1;
+}
+
+#outputPage.show-progress .tagline-details {
+  display: none;
+}
+
+#outputPage.show-progress .score-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#outputPage.mail-active .mail-content {
+  display: block;
+}
+
+#outputPage.mail-active .sms-content,
+#outputPage.mail-active .push-content {
+  display: none;
+}
+
+#outputPage.sms-active .sms-content {
+  display: block;
+}
+
+#outputPage.sms-active .mail-content,
+#outputPage.sms-active .push-content {
+  display: none;
+}
+
+#outputPage.push-active .push-content {
+  display: block;
+}
+
+#outputPage.push-active .mail-content,
+#outputPage.push-active .sms-content {
+  display: none;
+}
+
+/** Output score chart **/
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 150px;
+  -webkit-box-shadow: -5px 5px 6px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: -5px 5px 6px -2px rgba(0, 0, 0, 0.2);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.target {
+  font-weight: 600;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px 0 50px;
+}
+
+#tierPointsValue {
+  line-height: 175px !important;
+}
+
+.target-chart {
+  border-radius: 50%;
+  background-size: cover;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1)));
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  -webkit-box-shadow: inset 0 0 0 35px white;
+          box-shadow: inset 0 0 0 35px white;
+  position: relative;
+  margin: auto;
+}
+
+.target-percentage {
+  color: #326ec8;
+  font-size: 20px;
+}
+
+.points-random {
+  margin-top: -150px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.totalTierPoints {
+  font-size: 30px;
+}
 /*# sourceMappingURL=main.css.map */

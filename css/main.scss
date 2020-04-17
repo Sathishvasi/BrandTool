@@ -557,3 +557,244 @@ h6 {
     }
   }
 }
+
+/** Output page**/
+#outputPage {
+
+  .score-details {
+    display: none;
+    margin-top: 100px;
+    position: relative;
+
+    &>h3 {
+      position: absolute;
+      top: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #6d6d6d;
+      font-size: 23px;
+    }
+
+    .target,
+    .progress {
+      flex: 1;
+    }
+
+    .progress {
+      margin-top: 5px;
+
+      .perc {
+        position: absolute;
+        display: none;
+        top: 0;
+        line-height: 30px;
+        right: 10px;
+      }
+
+      .container {
+        position: relative;
+        width: 80%;
+        height: 30px;
+        background-color: rgba(0, 0, 0, .5);
+        border-radius: 4px;
+        margin: 20px 0;
+      }
+
+      .container:after {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        line-height: 30px;
+      }
+
+      .fillmult {
+        height: 100%;
+        width: 0;
+        background-color: rgba(0, 0, 0, .5);
+        border-radius: 4px;
+        line-height: 30px;
+        text-align: left;
+        color: #ffffff;
+      }
+
+      .fillmult span {
+        padding-left: 10px;
+
+        b {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  .sms-content,
+  .push-content {
+    display: none;
+  }
+
+  .tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .item {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: rgb(248, 248, 248);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 1.5rem;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: 2px solid rgb(228, 228, 228);
+
+      &.active {
+        background: #313131;
+        border: 2px solid rgb(148, 183, 212);
+        cursor: default;
+      }
+
+      img {
+        width: 60%;
+        height: 60%;
+      }
+    }
+  }
+
+  .taglines {
+    margin-top: 2.5rem;
+
+    .row {
+      display: flex;
+      justify-content: center;
+
+      .tag {
+        width: 300px;
+        height: 120px;
+        padding: 1rem;
+        margin: 1.2rem;
+        background: #fff;
+        border-radius: 10px;
+        border: 2px solid rgb(228, 228, 228);
+
+        .title {
+          text-align: center;
+          color: rgb(105, 105, 105);
+          font-weight: normal;
+        }
+
+        .actions {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-top: 1.4rem;
+
+          img {
+            width: 30px;
+            height: 30px;
+            margin: 0 0.4rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            opacity: 0.7;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#outputPage.show-progress {
+  .tagline-details {
+    display: none;
+  }
+
+  .score-details {
+    display: flex;
+  }
+}
+
+#outputPage.mail-active {
+  .mail-content {
+    display: block;
+  }
+
+  .sms-content,
+  .push-content {
+    display: none;
+  }
+}
+
+#outputPage.sms-active {
+  .sms-content {
+    display: block;
+  }
+
+  .mail-content,
+  .push-content {
+    display: none;
+  }
+}
+
+#outputPage.push-active {
+  .push-content {
+    display: block;
+  }
+
+  .mail-content,
+  .sms-content {
+    display: none;
+  }
+}
+
+/** Output score chart **/
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 150px;
+  box-shadow: -5px 5px 6px -2px rgba(0, 0, 0, 0.2);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.target {
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 50px;
+}
+
+#tierPointsValue {
+  line-height: 175px !important;
+}
+
+.target-chart {
+  border-radius: 50%;
+  background-size: cover;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  box-shadow: inset 0 0 0 35px white;
+  position: relative;
+  margin: auto;
+}
+
+.target-percentage {
+  color: $blue;
+  font-size: 20px;
+}
+
+.points-random {
+  margin-top: -150px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.totalTierPoints {
+  font-size: 30px;
+}

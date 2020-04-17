@@ -30,6 +30,11 @@
         // localStorage.setItem('productInput', $('.product.selected .product__details__title').text());
         window.location.href = '/keywords.html';
         break;
+
+      case path === 'keywords.html':
+        // localStorage.setItem('productInput', $('.product.selected .product__details__title').text());
+        window.location.href = '/output.html';
+        break;
     }
   });
 
