@@ -1,0 +1,560 @@
+[
+    {
+      "firstName": "Aaron",
+      "lastName": "Purser",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.27892",
+          "phrase": "Stay safe with us. Stay Healthy",
+          "formalityScore": "0.62244",
+          "totalscore": "0.48499",
+          "frustationScore": "0.61168"
+        },
+        {
+          "politenessScore": "0.76759",
+          "phrase": "Caring for life.",
+          "formalityScore": "0.48019",
+          "totalscore": "0.59332",
+          "frustationScore": "0.45816"
+        },
+        {
+          "politenessScore": "0.66391",
+          "phrase": "Your health is our priority",
+          "formalityScore": "0.81091",
+          "totalscore": "0.69098",
+          "frustationScore": "0.18841"
+        }
+      ],
+      "calendarEvent": "Diwali",
+      "id": "1",
+      "notificationType": "Email",
+      "campaignIntent": "retention"
+    },
+    {
+      "firstName": "Pearle",
+      "lastName": "Duerden",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.64554",
+          "phrase": "A heritage in care. A reputation in excellence",
+          "formalityScore": "0.34224",
+          "totalscore": "0.48779",
+          "frustationScore": "0.12691"
+        },
+        {
+          "politenessScore": "0.99145",
+          "phrase": "Advancing medicine. Touching lives.",
+          "formalityScore": "0.65073",
+          "totalscore": "0.72117",
+          "frustationScore": "0.68379"
+        },
+        {
+          "politenessScore": "0.92367",
+          "phrase": "A leading light in healthcare",
+          "formalityScore": "0.47714",
+          "totalscore": "0.65673",
+          "frustationScore": "0.22677"
+        }
+      ],
+      "calendarEvent": "Diwali",
+      "id": "2",
+      "notificationType": "SMS",
+      "campaignIntent": "retention"
+    },
+    {
+      "firstName": "Amy",
+      "lastName": "Jones",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.36092",
+          "phrase": "A passion for putting patients first",
+          "formalityScore": "0.47786",
+          "totalscore": "0.41384",
+          "frustationScore": "0.35304"
+        },
+        {
+          "politenessScore": "0.88649",
+          "phrase": "Best of Care, Close to Home",
+          "formalityScore": "0.12729",
+          "totalscore": "0.44725",
+          "frustationScore": "0.26291"
+        },
+        {
+          "politenessScore": "0.86093",
+          "phrase": "Big-city medicine. Hometown care",
+          "formalityScore": "0.24801",
+          "totalscore": "0.49415",
+          "frustationScore": "0.07753"
+        }
+      ],
+      "calendarEvent": "Diwali",
+      "id": "3",
+      "notificationType": "PushNotification",
+      "campaignIntent": "retention"
+    },
+    {
+      "firstName": "Steve",
+      "lastName": "Finn",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.82163",
+          "phrase": "Caring. Healing. Leading.",
+          "formalityScore": "0.61051",
+          "totalscore": "0.70109",
+          "frustationScore": "0.59324"
+        },
+        {
+          "politenessScore": "0.91292",
+          "phrase": "Compassion. Innovation. Trust.",
+          "formalityScore": "0.82394",
+          "totalscore": "0.85053",
+          "frustationScore": "0.40404"
+        },
+        {
+          "politenessScore": "0.47444",
+          "phrase": "Depend on Us for Life.",
+          "formalityScore": "0.5647",
+          "totalscore": "0.51015",
+          "frustationScore": "0.19589"
+        }
+      ],
+      "calendarEvent": "Black Friday",
+      "id": "1",
+      "notificationType": "Email",
+      "campaignIntent": "retention"
+    },
+    {
+      "firstName": "Pearle",
+      "lastName": "Duerden",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.40995",
+          "phrase": "Enhancing Life. Excelling in Care.",
+          "formalityScore": "0.92572",
+          "totalscore": "0.718",
+          "frustationScore": "0.91009"
+        },
+        {
+          "politenessScore": "0.89027",
+          "phrase": "Exceptional care. Every patient. Every day.",
+          "formalityScore": "0.81009",
+          "totalscore": "0.8043",
+          "frustationScore": "0.05358"
+        },
+        {
+          "politenessScore": "0.02708",
+          "phrase": "Exceptional technology. Extraordinary care.",
+          "formalityScore": "0.84055",
+          "totalscore": "0.51207",
+          "frustationScore": "0.77877"
+        }
+      ],
+      "calendarEvent": "Black Friday",
+      "id": "2",
+      "notificationType": "SMS",
+      "campaignIntent": "retention"
+    },
+    {
+      "firstName": "Amy",
+      "lastName": "Jones",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.52839",
+          "phrase": "Founded on faith. Focused on family",
+          "formalityScore": "0.07739",
+          "totalscore": "0.2866",
+          "frustationScore": "0.17544"
+        },
+        {
+          "politenessScore": "0.22548",
+          "phrase": "Good Help to Those in Need",
+          "formalityScore": "0.43533",
+          "totalscore": "0.33143",
+          "frustationScore": "0.03615"
+        },
+        {
+          "politenessScore": "0.75878",
+          "phrase": "Healing Hands. Caring Hearts",
+          "formalityScore": "0.79855",
+          "totalscore": "0.7490",
+          "frustationScore": "0.12744"
+        }
+      ],
+      "calendarEvent": "Black Friday",
+      "id": "3",
+      "notificationType": "PushNotification",
+      "campaignIntent": "retention"
+    },
+    {
+      "firstName": "Steve",
+      "lastName": "Finn",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.7564",
+          "phrase": "Hearts Plus Minds.",
+          "formalityScore": "0.7144",
+          "totalscore": "0.71048",
+          "frustationScore": "0.04017"
+        },
+        {
+          "politenessScore": "0.90966",
+          "phrase": "Hope Lives Here.",
+          "formalityScore": "0.07766",
+          "totalscore": "0.41521",
+          "frustationScore": "0.16283"
+        },
+        {
+          "politenessScore": "0.54098",
+          "phrase": "Improving the Quality of Your Life at Home.",
+          "formalityScore": "0.42702",
+          "totalscore": "0.4847",
+          "frustationScore": "0.78987"
+        }
+      ],
+      "calendarEvent": "Cyber Monday",
+      "id": "1",
+      "notificationType": "Email",
+      "campaignIntent": "retention"
+    },
+    {
+      "firstName": "Pearle",
+      "lastName": "Duerden",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.65723",
+          "phrase": "Inspiring Better Health.",
+          "formalityScore": "0.64428",
+          "totalscore": "0.6239",
+          "frustationScore": "0.11314"
+        },
+        {
+          "politenessScore": "0.76257",
+          "phrase": "Medical excellence every day.",
+          "formalityScore": "0.84099",
+          "totalscore": "0.78290",
+          "frustationScore": "0.32663"
+        },
+        {
+          "politenessScore": "0.66839",
+          "phrase": "Medicine that touches the world.",
+          "formalityScore": "0.38227",
+          "totalscore": "0.50192",
+          "frustationScore": "0.4863"
+        }
+      ],
+      "calendarEvent": "Cyber Monday",
+      "id": "2",
+      "notificationType": "SMS",
+      "campaignIntent": "retention"
+    },
+    {
+      "firstName": "Amy",
+      "lastName": "Jones",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.27792",
+          "phrase": "Live with elegance. Fly with Emirates",
+          "formalityScore": "0.73795",
+          "totalscore": "0.5382",
+          "frustationScore": "0.42462"
+        },
+        {
+          "politenessScore": "0.09857",
+          "phrase": "Keep discovering.",
+          "formalityScore": "0.6678",
+          "totalscore": "0.418",
+          "frustationScore": "0.23248"
+        },
+        {
+          "politenessScore": "0.17126",
+          "phrase": "Tommorrow brings us all closer",
+          "formalityScore": "0.42133",
+          "totalscore": "0.5382",
+          "frustationScore": "0.87893"
+        }
+      ],
+      "calendarEvent": "Cyber Monday",
+      "id": "3",
+      "notificationType": "PushNotification",
+      "campaignIntent": "retention"
+    },
+      {
+      "firstName": "Steve",
+      "lastName": "Finn",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.63392",
+          "phrase": "People you know. Healthcare you trust.",
+          "formalityScore": "0.83406",
+          "totalscore": "0.7557",
+          "frustationScore": "0.86893"
+        },
+        {
+          "politenessScore": "0.72301",
+          "phrase": "Progressive care with compassion.",
+          "formalityScore": "0.24645",
+          "totalscore": "0.4416",
+          "frustationScore": "0.3389"
+        },
+        {
+          "politenessScore": "0.98496",
+          "phrase": "Putting more care into healthcare.",
+          "formalityScore": "0.867",
+          "totalscore": "0.9204",
+          "frustationScore": "0.99132"
+        }
+      ],
+      "calendarEvent": "Diwali",
+      "id": "1",
+      "notificationType": "Email",
+      "campaignIntent": "new"
+    },
+    {
+      "firstName": "Pearle",
+      "lastName": "Duerden",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.46239",
+          "phrase": "Remarkable People. Remarkable Medicine.",
+          "formalityScore": "0.62168",
+          "totalscore": "0.5547",
+          "frustationScore": "0.55674"
+        },
+        {
+          "politenessScore": "0.65223",
+          "phrase": "Serving humanity in the service of Christ.",
+          "formalityScore": "0.13651",
+          "totalscore": "0.3407",
+          "frustationScore": "0.05692"
+        },
+        {
+          "politenessScore": "0.74917",
+          "phrase": "Small enough to care. Large enough to heal.",
+          "formalityScore": "0.26489",
+          "totalscore": "0.41861",
+          "frustationScore": "0.816"
+        }
+      ],
+      "calendarEvent": "Diwali",
+      "id": "2",
+      "notificationType": "SMS",
+      "campaignIntent": "new"
+    },
+    {
+      "firstName": "Amy",
+      "lastName": "Jones",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.03305",
+          "phrase": "The science of medicine. The art of healing.",
+          "formalityScore": "0.284",
+          "totalscore": "0.173",
+          "frustationScore": "0.068"
+        },
+        {
+          "politenessScore": "0.856",
+          "phrase": "The skill to heal. The spirit to care.",
+          "formalityScore": "0.213",
+          "totalscore": "0.476",
+          "frustationScore": "0.320"
+        },
+        {
+          "politenessScore": "0.980",
+          "phrase": "The spirit of caring close to home.",
+          "formalityScore": "0.740",
+          "totalscore": "0.802",
+          "frustationScore": "0.006"
+        }
+      ],
+      "calendarEvent": "Diwali",
+      "id": "3",
+      "notificationType": "PushNotification",
+      "campaignIntent": "new"
+    },
+    {
+      "firstName": "Steve",
+      "lastName": "Finn",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.254",
+          "phrase": "Trusted for our expertise. Chosen for our care.",
+          "formalityScore": "0.597",
+          "totalscore": "0.409",
+          "frustationScore": "0.676"
+        },
+        {
+          "politenessScore": "0.697",
+          "phrase": "Uncompromising Excellence. Commitment to Care.",
+          "formalityScore": "0.305",
+          "totalscore": "0.557",
+          "frustationScore": "0.205"
+        },
+        {
+          "politenessScore": "0.7069",
+          "phrase": "You’ll Love the Way We Care for You.",
+          "formalityScore": "0.1015",
+          "totalscore": "0.394",
+          "frustationScore": "0.767"
+        }
+      ],
+      "calendarEvent": "Black Friday",
+      "id": "1",
+      "notificationType": "Email",
+      "campaignIntent": "new"
+    },
+    {
+      "firstName": "Pearle",
+      "lastName": "Duerden",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.690",
+          "phrase": "Your Health. Our Mission.",
+          "formalityScore": "0.496",
+          "totalscore": "0.584",
+          "frustationScore": "0.698"
+        },
+        {
+          "politenessScore": "0.773",
+          "phrase": "Your Hospital for Life.",
+          "formalityScore": "0.308",
+          "totalscore": "0.507",
+          "frustationScore": "0.569"
+        },
+        {
+          "politenessScore": "0.259",
+          "phrase": "Your Most Trusted Health Partner for Life.",
+          "formalityScore": "0.123",
+          "totalscore": "0.214",
+          "frustationScore": "0.845"
+        }
+      ],
+      "calendarEvent": "Black Friday",
+      "id": "2",
+      "notificationType": "SMS",
+      "campaignIntent": "new"
+    },
+    {
+      "firstName": "Amy",
+      "lastName": "Jones",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.665",
+          "phrase": "Zero in on maximum health.",
+          "formalityScore": "0.742",
+          "totalscore": "0.741",
+          "frustationScore": "0.711"
+        },
+        {
+          "politenessScore": "0.881",
+          "phrase": "We’re Right Where You Need Us.",
+          "formalityScore": "0.405",
+          "totalscore": "0.598",
+          "frustationScore": "0.450"
+        },
+        {
+          "politenessScore": "0.553",
+          "phrase": "Tommorrow brings us all closer",
+          "formalityScore": "0.527",
+          "totalscore": "0.560",
+          "frustationScore": "0.966"
+        }
+      ],
+      "calendarEvent": "Black Friday",
+      "id": "3",
+      "notificationType": "PushNotification",
+      "campaignIntent": "new"
+    },
+    {
+      "firstName": "Steve",
+      "lastName": "Finn",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.934",
+          "phrase": "Living Healthier Together",
+          "formalityScore": "0.786",
+          "totalscore": "0.808",
+          "frustationScore": "0.051"
+        },
+        {
+          "politenessScore": "0.934",
+          "phrase": "Investing in Quality Care",
+          "formalityScore": "0.786",
+          "totalscore": "0.808",
+          "frustationScore": "0.051"
+        },
+        {
+          "politenessScore": "0.39531",
+          "phrase": "The care you need. The compassion you deserve.",
+          "formalityScore": "0.93421",
+          "totalscore": "0.6742",
+          "frustationScore": "0.4619"
+        }
+      ],
+      "calendarEvent": "Cyber Monday",
+      "id": "1",
+      "notificationType": "Email",
+      "campaignIntent": "new"
+    },
+    {
+      "firstName": "Pearle",
+      "lastName": "Duerden",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.8233",
+          "phrase": "The Hospital of the Future, Today",
+          "formalityScore": "0.973",
+          "totalscore": "0.909",
+          "frustationScore": "0.8949"
+        },
+        {
+          "politenessScore": "0.026",
+          "phrase": "Helping You Help Your Loved One",
+          "formalityScore": "0.360",
+          "totalscore": "0.222",
+          "frustationScore": "0.280"
+        },
+        {
+          "politenessScore": "0.181",
+          "phrase": "A Community of Caring",
+          "formalityScore": "0.865",
+          "totalscore": "0.591",
+          "frustationScore": "0.864"
+        }
+      ],
+      "calendarEvent": "Cyber Monday",
+      "id": "2",
+      "notificationType": "SMS",
+      "campaignIntent": "new"
+    },
+    {
+      "firstName": "Amy",
+      "lastName": "Jones",
+      "brandCopywritingPrase": [
+        {
+          "politenessScore": "0.620",
+          "phrase": "Engineering the flow of healthcare",
+          "formalityScore": "0.515",
+          "totalscore": "0.464",
+          "frustationScore": "0.757"
+        },
+        {
+          "politenessScore": "0.701",
+          "phrase": "Tradition. Quality. Progress.",
+          "formalityScore": "0.480",
+          "totalscore": "0.391",
+          "frustationScore": "0.509"
+        },
+        {
+          "politenessScore": "0.117",
+          "phrase": "Minds Advancing Medicine",
+          "formalityScore": "0.540",
+          "totalscore": "0.391",
+          "frustationScore": "0.939"
+        }
+      ],
+      "calendarEvent": "Cyber Monday",
+      "id": "3",
+      "notificationType": "PushNotification",
+      "campaignIntent": "new"
+    }
+  ]

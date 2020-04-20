@@ -1,5 +1,6 @@
+var productEle = $("#productPage .item");
+
 $(document).ready(function () {
-  var productEle = $("#productPage .item");
   productEle.on("click", function () {
     productEle.removeClass("selected");
     $(this).addClass("selected");
@@ -12,6 +13,9 @@ $(document).ready(function () {
 
 
   $('.search__category').on('change', function () {
+    productEle.removeClass('selected');
+    $("#productPage .action-buttons .continue").addClass("hidden");
+    $("#productPage .action-buttons .skip").removeClass("hidden");
     let selectedOption = $(this).children("option:selected").val();
     switch (selectedOption) {
       case "men":

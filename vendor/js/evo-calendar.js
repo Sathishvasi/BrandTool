@@ -230,7 +230,7 @@
         function buildMainHTML() {
             var mainHTML = '<div class="calendar-sidebar"></div><div class="calendar-inner"></div><div class="calendar-events"></div>';
             if(_.options.canAddEvent) {
-                mainHTML += '<span id="eventAddButton" title="Add event">ADD EVENT</span>';
+                mainHTML += '';
             }
             if(_.options.eventListToggler) {
                 mainHTML += '<span id="eventListToggler" title="Close event list"><button class="icon-button"><span class="chevron-arrow-right"></span></button></span>';
@@ -256,7 +256,7 @@
         function buildCalendarHTML() {
             calendarHTML = '<table class="calendar-table">';
             calendarHTML += '<tr><th colspan="7">';
-            calendarHTML +=  _.$formatDate(new Date(monthName +' '+ new_year), _.options.titleFormat, 'en');
+            calendarHTML += monthName;
             calendarHTML += '</th></tr>';
             calendarHTML += '<tr class="calendar-header">';
             for(var i = 0; i <= 6; i++ ){
@@ -293,9 +293,11 @@
         
         function buildEventListHTML() {
             if(_.options.calendarEvents != null) {
+                // var eventHTML = '<div class="event-header"><p>'+_.$formatDate(new Date(_.$active_date),"MM d", 'en')+'</p></div>';
                 var eventHTML = '<div class="event-header"><p>'+_.$formatDate(new Date(_.$active_date), _.options.eventHeaderFormat, 'en')+'</p></div>';
+
                 var hasEventToday = false;
-                eventHTML += '<div>';
+                eventHTML += '<div class="event-wrapper">';
                 for (var i = 0; i < _.options.calendarEvents.length; i++) {
                     if(_.$active_date === _.options.calendarEvents[i].date) {
                         hasEventToday = true;
@@ -316,9 +318,9 @@
                     }
                 };
                 if(!hasEventToday) {
-                    eventHTML += '<p>No event for this day</p>';
+                    eventHTML += '<img src="images/black-elipsis-add.svg" class="myBtn" alt="Add Event"/><p>Add Event</p>';
                 }
-                eventHTML += '</div><div id="calendar-continue-btn" class="continue contine-btn"><i class="fas fa-chevron-right"></i></div>';
+                eventHTML += '</div><div class="action-buttons"><img class="action-button continue continue-btn" src="images/next.svg" alt="next"/></div>';
                 _.$eventHTML = eventHTML;
             }
         }
@@ -442,7 +444,7 @@
                .on('click.evocalendar', _.toggleEventList);
         }
         if(_.options.canAddEvent) {
-            $('#eventAddButton')
+            $('.eventAddButton')
                .off('click.evocalendar')
                .on('click.evocalendar', _.options.onAddEvent);
         }

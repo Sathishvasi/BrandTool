@@ -6,7 +6,6 @@ $(document).ready(function () {
 
     if (customerEle.hasClass("selected")) {
       $("#customerPage .action-buttons .continue").removeClass("hidden");
-      $("#customerPage .action-buttons .skip").addClass("hidden");
     }
   });
 });

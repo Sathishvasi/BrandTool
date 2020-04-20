@@ -18,7 +18,8 @@
 
 input,
 option,
-select {
+select,
+button {
   font-family: "Tajawal";
 }
 
@@ -135,31 +136,36 @@ h6 {
   margin-bottom: 3rem;
 }
 
-.contine-btn {
-  background-color: #326ec8;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-decoration: none;
-  margin-top: 270px;
-  -webkit-box-shadow: 0px 3px 6px #656565;
-          box-shadow: 0px 3px 6px #656565;
-  cursor: pointer;
-  display: none;
+.keyword__input,
+.brand-input {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1.8rem 4rem 1.8rem 1.8rem;
+  font-size: 20px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.contine-btn i {
-  color: white;
-  font-size: 34px;
+.keyword__input:hover, .keyword__input:focus,
+.brand-input:hover,
+.brand-input:focus {
+  -webkit-box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
+}
+
+.brand-btn {
+  padding: 10px 25px;
+  background-color: #6a6a6a;
+  color: #ffffff;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
 }
 
 .grid .row {
@@ -330,6 +336,16 @@ h6 {
   color: #ffffff;
 }
 
+.calendar-input-container #calendarEvents .event-wrapper {
+  text-align: center;
+}
+
+.calendar-input-container #calendarEvents .event-wrapper .myBtn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
 .calendar-input-container #calendarEvents .icon-button {
   width: 15px;
   height: 15px;
@@ -356,6 +372,8 @@ h6 {
       -ms-flex: 1;
           flex: 1;
   margin: 0;
+  padding-top: 22px;
+  padding-bottom: 0;
 }
 
 .calendar-input-container #calendarEvents .calendar-inner th[colspan="7"] {
@@ -386,13 +404,17 @@ h6 {
   padding-left: 0;
 }
 
+.calendar-input-container #calendarEvents .calendar-events .continue-btn {
+  display: none;
+}
+
 .calendar-input-container #calendarEvents .calendar-events .event-header {
   margin-bottom: 30px;
 }
 
 .calendar-input-container #calendarEvents .calendar-events .event-header p {
   color: #000000;
-  font-size: 28px;
+  font-size: 25px;
 }
 
 .calendar-input-container #calendarEvents .calendar-events .event-container:hover {
@@ -427,13 +449,11 @@ h6 {
   background-image: url("/images/checked-circle.png");
   background-size: contain;
   background-repeat: no-repeat;
-  top: 13px;
+  top: 12px;
 }
 
-.calendar-input-container #calendarEvents .event-selected .contine-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.calendar-input-container #calendarEvents .event-selected .continue-btn {
+  display: block;
 }
 
 .calendar-input-container #calendarEvents .uncheck-event .event-info {
@@ -572,26 +592,33 @@ h6 {
   margin: 5rem auto 0;
   width: 40rem;
   height: 3rem;
+  position: relative;
+}
+
+#keywordPage .keyword button {
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+  top: -80px;
+  right: -60px;
+  padding-left: 45px;
+}
+
+#keywordPage .keyword button:before {
+  content: '';
+  background-image: url(/images/gray-elipsis-add.svg);
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  height: 25px;
+  width: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 10px;
 }
 
 #keywordPage .keyword__input {
-  width: 100%;
-  height: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 1.8rem 4rem 1.8rem 1.8rem;
-  font-size: 20px;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-  border: none;
-  border-radius: 4px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-#keywordPage .keyword__input:hover, #keywordPage .keyword__input:focus {
-  -webkit-box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
 }
 
 /** Output page**/
@@ -713,6 +740,10 @@ h6 {
   height: 60%;
 }
 
+#outputPage .tabs .hidden {
+  display: none;
+}
+
 #outputPage .taglines {
   margin-top: 2.5rem;
 }
@@ -734,6 +765,33 @@ h6 {
   background: #fff;
   border-radius: 10px;
   border: 2px solid #e4e4e4;
+}
+
+#outputPage .taglines .row .tag-input {
+  position: relative;
+  display: none;
+}
+
+#outputPage .taglines .row .tag-input input {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  padding: 4px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #7b7b7b;
+  padding-right: 30px;
+}
+
+#outputPage .taglines .row .tag-input img {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 33px;
+  cursor: pointer;
 }
 
 #outputPage .taglines .row .tag .title {
@@ -765,6 +823,18 @@ h6 {
 
 #outputPage .taglines .row .tag .actions img:hover {
   opacity: 1;
+}
+
+#outputPage .taglines .row .edit-mode .tag-input {
+  display: block;
+}
+
+#outputPage .taglines .row .edit-mode .title {
+  display: none;
+}
+
+#outputPage .taglines .row .edit-mode .actions {
+  margin-top: 0.9rem;
 }
 
 #outputPage.show-progress .tagline-details {
@@ -857,5 +927,127 @@ canvas {
 
 .totalTierPoints {
   font-size: 30px;
+}
+
+/** Modal **/
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 30%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+.modal-header {
+  padding: 7px 16px;
+  background-color: #000000;
+  color: white;
+}
+
+.modal-header h2 {
+  font-size: 23px;
+  font-weight: normal;
+}
+
+.modal-body {
+  position: relative;
+  padding: 20px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-body p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.modal-body span {
+  position: absolute;
+  color: red;
+  left: 25px;
+  top: 106px;
+  font-size: 14px;
+  display: none;
+}
+
+.modal-body .event-name {
+  padding: 8px 16px;
+  font-size: 17px;
+}
+
+.modal-body button {
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1em;
 }
 /*# sourceMappingURL=main.css.map */

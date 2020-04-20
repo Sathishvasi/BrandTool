@@ -1,4 +1,37 @@
 $(document).ready(function () {
+    $.getJSON("../data/output.json", function (json) {
+        console.log(json);
+    });
+
+    // Edit Tagline
+    $('.edit-tagline').on('click', function () {
+        $(this).closest('.tag').addClass('edit-mode');
+    });
+
+    $('.tag-input input').on('keyup', function (event) {
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            $(this).next().click();
+        }
+    });
+
+    $('.tag-input img').on('click', function () {
+        $(this).closest('.tag').find('.title').text($(this).prev().val());
+        $(this).closest('.tag').removeClass('edit-mode');
+    });
+
+    // Notification type tabs logics
+    let notificationType = JSON.parse(localStorage.getItem('notificationInput'));
+    notificationType.forEach((val, index) => {
+        if (index === 0) {
+            $('#' + val).addClass('active')
+        }
+        $('#' + val).removeClass('hidden');
+    })
+
+    // Image update 
     $('#outputPage .item').on('click', function () {
         $('#outputPage .item').removeClass('active');
         $('#outputPage').removeClass('show-progress');
@@ -6,7 +39,7 @@ $(document).ready(function () {
         $(this).addClass('active');
         let notificationType = $(this).attr('id');
         switch (notificationType) {
-            case 'mail':
+            case 'email':
                 $('#outputPage').removeClass('sms-active push-active');
                 $('#outputPage').addClass('mail-active');
                 $('.left-nav .left-nav__image img').attr('src', 'images/email-banner.png');
@@ -16,7 +49,7 @@ $(document).ready(function () {
                 $('#outputPage').addClass('sms-active');
                 $('.left-nav .left-nav__image img').attr('src', 'images/sms-banner.png');
                 break;
-            case 'push':
+            case 'pushNotification':
                 $('#outputPage').removeClass('sms-active mail-active');
                 $('#outputPage').addClass('push-active');
                 $('.left-nav .left-nav__image img').attr('src', 'images/push-banner.png');

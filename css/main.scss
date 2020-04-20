@@ -24,7 +24,8 @@ $sidebar-width: 340px;
 
 input,
 option,
-select {
+select,
+button {
   font-family: "Tajawal";
 }
 
@@ -131,24 +132,31 @@ h6 {
   }
 }
 
-.contine-btn {
-  background-color: $blue;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  margin-top: 270px;
-  box-shadow: 0px 3px 6px #656565;
-  cursor: pointer;
-  display: none;
+.keyword__input,
+.brand-input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 1.8rem 4rem 1.8rem 1.8rem;
+  font-size: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s;
 
-  i {
-    color: white;
-    font-size: 34px;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
   }
+}
+
+.brand-btn {
+  padding: 10px 25px;
+  background-color: #6a6a6a;
+  color: #ffffff;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
 }
 
 .grid {
@@ -310,6 +318,17 @@ h6 {
   }
 
   #calendarEvents {
+
+    .event-wrapper {
+      text-align: center;
+
+      .myBtn {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+    }
+
     .icon-button {
       width: 15px;
       height: 15px;
@@ -333,6 +352,8 @@ h6 {
       box-shadow: none;
       flex: 1;
       margin: 0;
+      padding-top: 22px;
+      padding-bottom: 0;
 
       th[colspan="7"] {
         text-transform: capitalize;
@@ -355,12 +376,16 @@ h6 {
       align-items: center;
       padding-left: 0;
 
+      .continue-btn {
+        display: none;
+      }
+
       .event-header {
         margin-bottom: 30px;
 
         p {
           color: #000000;
-          font-size: 28px;
+          font-size: 25px;
         }
       }
 
@@ -398,12 +423,12 @@ h6 {
           background-image: url("/images/checked-circle.png");
           background-size: contain;
           background-repeat: no-repeat;
-          top: 13px;
+          top: 12px;
         }
       }
 
-      .contine-btn {
-        display: flex;
+      .continue-btn {
+        display: block;
       }
     }
 
@@ -538,22 +563,32 @@ h6 {
     margin: 5rem auto 0;
     width: 40rem;
     height: 3rem;
+    position: relative;
+
+    button {
+      position: absolute;
+      right: 0;
+      font-size: 18px;
+      top: -80px;
+      right: -60px;
+      padding-left: 45px;
+
+      &:before {
+        content: '';
+        background-image: url(/images/gray-elipsis-add.svg);
+        display: inline-block;
+        position: absolute;
+        left: 10px;
+        height: 25px;
+        width: 25px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 10px;
+      }
+    }
 
     &__input {
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      padding: 1.8rem 4rem 1.8rem 1.8rem;
-      font-size: 20px;
-      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-      border: none;
-      border-radius: 4px;
-      transition: all 0.3s;
-
-      &:hover,
-      &:focus {
-        box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1);
-      }
+      margin-bottom: 25px;
     }
   }
 }
@@ -661,6 +696,10 @@ h6 {
         height: 60%;
       }
     }
+
+    .hidden {
+      display: none;
+    }
   }
 
   .taglines {
@@ -678,6 +717,32 @@ h6 {
         background: #fff;
         border-radius: 10px;
         border: 2px solid rgb(228, 228, 228);
+
+        &-input {
+          position: relative;
+          display: none;
+
+          input {
+            width: 80%;
+            margin: 0 auto;
+            display: block;
+            padding: 4px 10px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 1px solid #7b7b7b;
+            padding-right: 30px;
+          }
+
+          img {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 33px;
+            cursor: pointer;
+          }
+        }
 
         .title {
           text-align: center;
@@ -703,6 +768,20 @@ h6 {
               opacity: 1;
             }
           }
+        }
+      }
+
+      .edit-mode {
+        .tag-input {
+          display: block;
+        }
+
+        .title {
+          display: none;
+        }
+
+        .actions {
+          margin-top: 0.9rem;
         }
       }
     }
@@ -797,4 +876,122 @@ canvas {
 
 .totalTierPoints {
   font-size: 30px;
+}
+
+
+/** Modal **/
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+
+  /* Black w/ opacity */
+  &-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+
+  &-header {
+    padding: 7px 16px;
+    background-color: #000000;
+    color: white;
+
+    h2 {
+      font-size: 23px;
+      font-weight: normal;
+    }
+  }
+
+
+  &-body {
+    position: relative;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    span {
+      position: absolute;
+      color: red;
+      left: 25px;
+      top: 106px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .event-name {
+      padding: 8px 16px;
+      font-size: 17px;
+    }
+
+    button {
+      font-size: 15px;
+      margin-top: 20px;
+    }
+  }
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1em;
 }

@@ -1,53 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Brand Copy Writing</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/logo.png" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/css/evo-calendar.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <!--===============================================================================================-->
-  </head>
 
-  <body>
-    <div class="calendar-input-container wrapper">
-      <div class="left-nav">
-        <div class="left-nav__header">
-          <img src="images/logo.png" alt="Logo" />
-          <p>Brand Copy Writing</p>
-        </div>
-        <div class="left-nav__image">
-          <img src="images/image-removebg-preview.png" alt="Calendar event" />
-          <p>Select your calendar Event</p>
-        </div>
-        <div class="left-nav__timeline">
-          <a href="#" class="active">1</a>
-          <a href="#"></a>
-          <a href="#"></a>
-          <a href="#"></a>
-          <a href="#"></a>
-          <a href="#"></a>
-        </div>
+<head>
+  <title>Brand Copy Writing</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/css/evo-calendar.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <!--===============================================================================================-->
+</head>
+
+<body>
+  <div class="calendar-input-container wrapper">
+    <div class="left-nav">
+      <div class="left-nav__header">
+        <img src="images/logo.png" alt="Logo" />
+        <p>Brand Copy Writing</p>
       </div>
-      <div class="page-content">
-        <div id="calendarEvents"></div>
+      <div class="left-nav__image">
+        <img src="images/image-removebg-preview.png" alt="Calendar event" />
+        <p>Select your calendar Event</p>
+      </div>
+      <div class="left-nav__timeline">
+        <a href="#" class="active">1</a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
       </div>
     </div>
+    <div class="page-content">
+      <div id="calendarEvents"></div>
+    </div>
+  </div>
 
-    <!--===============================================================================================-->
-    <script src="vendor/js/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/js/font-awesome.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/js/evo-calendar.js"></script>
-    <!--===============================================================================================-->
-    <script src="js/calendar-input.js"></script>
-    <!--===============================================================================================-->
-    <script src="js/main.js"></script>
-    <!--===============================================================================================-->
-  </body>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Add Event</h2>
+      </div>
+      <div class="modal-body">
+        <p></p>
+        <input type="text" class="event-name brand-input" placeholder="Event Name" />
+        <span>*Fill the Event Name</span>
+        <button class="brand-btn eventAddButton">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!--===============================================================================================-->
+  <script src="vendor/js/jquery-3.2.1.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/js/font-awesome.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/js/evo-calendar.js"></script>
+  <!--===============================================================================================-->
+  <script src="js/calendar-input.js"></script>
+  <!--===============================================================================================-->
+  <script src="js/main.js"></script>
+  <!--===============================================================================================-->
+</body>
+
 </html>

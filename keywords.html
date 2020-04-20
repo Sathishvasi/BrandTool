@@ -1,64 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Brand Copy Writing</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/logo.png" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/css/evo-calendar.css" />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <!--===============================================================================================-->
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <div class="left-nav">
-        <div class="left-nav__header">
-          <img src="images/logo.png" alt="Logo" />
-          <p>Brand Copy Writing</p>
-        </div>
-        <div class="left-nav__image">
-          <img src="images/keyword-img.png" alt="Calendar event" />
-          <p>Add Keywords</p>
-        </div>
-        <div class="left-nav__timeline">
-          <a href="/index.html"></a>
-          <a href="/person.html"></a>
-          <a href="#"></a>
-          <a href="#"></a>
-          <a href="#"></a>
-          <a href="#" class="active">6</a>
-        </div>
+<head>
+  <title>Brand Copy Writing</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/css/evo-calendar.css" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <!--===============================================================================================-->
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="left-nav">
+      <div class="left-nav__header">
+        <img src="images/logo.png" alt="Logo" />
+        <p>Brand Copy Writing</p>
       </div>
-      <div class="page-content padding" id="keywordPage">
-        <h2 class="section-title">Keywords</h2>
-        <div class="keyword">
-          <input
-            type="text"
-            class="keyword__input"
-            placeholder="Add keywords..."
-          />
-        </div>
-        <div class="action-buttons">
-          <img
-            class="action-button continue"
-            src="images/next.svg"
-            alt="next"
-          />
-          <!-- <img class="action-button skip" src="images/skip.svg" alt="next" /> -->
-        </div>
+      <div class="left-nav__image">
+        <img src="images/keyword-img.png" alt="Calendar event" />
+        <p>Add Keywords</p>
+      </div>
+      <div class="left-nav__timeline">
+        <a href="/index.html"></a>
+        <a href="/person.html"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#" class="active">6</a>
       </div>
     </div>
+    <div class="page-content padding" id="keywordPage">
+      <h2 class="section-title">Keywords</h2>
+      <div class="keyword">
+        <button class="brand-btn">Add Input</button>
+        <input type="text" class="keyword__input" id="keyword1" placeholder="Add keywords..." />
+      </div>
+      <div class="action-buttons">
+        <img class="action-button continue" src="images/next.svg" alt="next" />
+      </div>
+    </div>
+  </div>
 
-    <!--===============================================================================================-->
-    <script src="vendor/js/jquery-3.2.1.min.js"></script>
-    <!--===============================================================================================-->
-    <script src="vendor/js/font-awesome.js"></script>
-    <!--===============================================================================================-->
-    <script src="js/main.js"></script>
-    <!--===============================================================================================-->
-  </body>
+  <!--===============================================================================================-->
+  <script src="vendor/js/jquery-3.2.1.min.js"></script>
+  <!--===============================================================================================-->
+  <script src="vendor/js/font-awesome.js"></script>
+  <!--===============================================================================================-->
+  <script src="js/keyword-input.js"></script>
+  <!--===============================================================================================-->
+  <script src="js/main.js"></script>
+  <!--===============================================================================================-->
+</body>
+
 </html>
