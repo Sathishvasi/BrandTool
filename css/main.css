@@ -691,11 +691,6 @@ h6 {
   font-weight: normal;
 }
 
-#outputPage .sms-content,
-#outputPage .push-content {
-  display: none;
-}
-
 #outputPage .tabs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -732,7 +727,6 @@ h6 {
 #outputPage .tabs .item.active {
   background: #313131;
   border: 2px solid #94b7d4;
-  cursor: default;
 }
 
 #outputPage .tabs .item img {
@@ -755,6 +749,8 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #outputPage .taglines .row .tag {
@@ -847,12 +843,12 @@ h6 {
   display: flex;
 }
 
-#outputPage.mail-active .mail-content {
+#outputPage.email-active .email-content {
   display: block;
 }
 
-#outputPage.mail-active .sms-content,
-#outputPage.mail-active .push-content {
+#outputPage.email-active .sms-content,
+#outputPage.email-active .push-content {
   display: none;
 }
 
@@ -860,7 +856,7 @@ h6 {
   display: block;
 }
 
-#outputPage.sms-active .mail-content,
+#outputPage.sms-active .email-content,
 #outputPage.sms-active .push-content {
   display: none;
 }
@@ -869,7 +865,7 @@ h6 {
   display: block;
 }
 
-#outputPage.push-active .mail-content,
+#outputPage.push-active .email-content,
 #outputPage.push-active .sms-content {
   display: none;
 }

@@ -1,10 +1,14 @@
 $(document).ready(function () {
-  var notificationEle = $("#notificationPage .item");
+  let notificationEle = $("#notificationPage .item");
+  let continueBtn = $("#notificationPage .action-buttons .continue");
+
   notificationEle.on("click", function () {
-    $(this).addClass("selected");
+    $(this).toggleClass("selected");
 
     if (notificationEle.hasClass("selected")) {
-      $("#notificationPage .action-buttons .continue").removeClass("hidden");
+      continueBtn.removeClass("hidden");
+    } else {
+      continueBtn.addClass("hidden");
     }
   });
 });

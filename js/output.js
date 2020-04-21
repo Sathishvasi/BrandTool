@@ -1,14 +1,58 @@
 $(document).ready(function () {
-    $.getJSON("../data/output.json", function (json) {
-        console.log(json);
+    $.getJSON("../data/output.json", function (response) {
+        response.forEach(function (val, index) {
+            switch (val.notificationType) {
+                case 'Email':
+                    renderTaglineCards('email', val);
+                    break;
+                case 'SMS':
+                    renderTaglineCards('sms', val);
+                    break;
+                case 'PushNotification':
+                    renderTaglineCards('push', val);
+                    break;
+            }
+        });
+        let firstChild = $('.tabs .item:not(.hidden)').eq(0);
+        let activeTab = firstChild.attr('id');
+        // First Tab active 
+        firstChild.addClass('active');
+        // Content enable
+        $('.page-content').addClass(activeTab + '-active');
+        // Left Banner Image enable
+        $('.left-nav .left-nav__image img').attr('src', 'images/' + activeTab + '-banner.png');
     });
+
+    function renderTaglineCards(type, val) {
+        let tagElement = '';
+        // Enable notification tab
+        $('#' + type).removeClass('hidden');
+        // Tagline card render
+        val.brandCopywritingPrase.forEach(function (tagData, index) {
+            tagElement += `<div class="tag" data-ploite="${tagData.politenessScore}" data-formality="${tagData.formalityScore}" data-frustation="${tagData.frustationScore}" data-total="${tagData.totalscore}">
+                        <div class="tag-input">
+                            <input type="text">
+                            <img src="images/checked-gray.svg" />
+                        </div>
+                        <h3 class="title">${tagData.phrase}</h3>
+                        <div class="actions">
+                            <img class="action" src="images/Group 808.svg" alt="action" />
+                            <img class="action edit-tagline" src="images/Group 809.svg" alt="action" />
+                            <img class="action view-detail" src="images/Group 810.svg" alt="action" />
+                        </div>
+                    </div>`;
+        });
+        $('.tagline-details').append(`<div class="taglines ${type}-content"><div class="row">${tagElement}</div></div>`);
+    }
 
     // Edit Tagline
-    $('.edit-tagline').on('click', function () {
-        $(this).closest('.tag').addClass('edit-mode');
+    $(document).on('click', '.edit-tagline', function () {
+        let rootTag = $(this).closest('.tag');
+        rootTag.addClass('edit-mode');
+        rootTag.find('.tag-input input').val(rootTag.find('.title').text());
     });
 
-    $('.tag-input input').on('keyup', function (event) {
+    $(document).on('keyup', '.tag-input input', function (event) {
         if (event.keyCode === 13) {
             // Cancel the default action, if needed
             event.preventDefault();
@@ -17,19 +61,10 @@ $(document).ready(function () {
         }
     });
 
-    $('.tag-input img').on('click', function () {
+    $(document).on('click', '.tag-input img', function () {
         $(this).closest('.tag').find('.title').text($(this).prev().val());
         $(this).closest('.tag').removeClass('edit-mode');
     });
-
-    // Notification type tabs logics
-    let notificationType = JSON.parse(localStorage.getItem('notificationInput'));
-    notificationType.forEach((val, index) => {
-        if (index === 0) {
-            $('#' + val).addClass('active')
-        }
-        $('#' + val).removeClass('hidden');
-    })
 
     // Image update 
     $('#outputPage .item').on('click', function () {
@@ -49,7 +84,7 @@ $(document).ready(function () {
                 $('#outputPage').addClass('sms-active');
                 $('.left-nav .left-nav__image img').attr('src', 'images/sms-banner.png');
                 break;
-            case 'pushNotification':
+            case 'push':
                 $('#outputPage').removeClass('sms-active mail-active');
                 $('#outputPage').addClass('push-active');
                 $('.left-nav .left-nav__image img').attr('src', 'images/push-banner.png');
@@ -58,9 +93,9 @@ $(document).ready(function () {
     });
 
     // Trigger scoreProgress
-    $('#outputPage .view-detail').on('click', function () {
+    $(document).on('click', '#outputPage .view-detail', function () {
         $('#outputPage').addClass('show-progress');
-        $('#outputPage .score-details').append(`<h3>Progress Details</h1>
+        $('#outputPage .score-details').append(`<h3>${$(this).closest('.tag').find('.title').text()}</h1>
         <div class="target">
             <div id="tierPointsValue" class="target-chart" data-percent="">
                 <div class="target-percentage">

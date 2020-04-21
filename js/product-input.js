@@ -1,21 +1,24 @@
-var productEle = $("#productPage .item");
-
 $(document).ready(function () {
+  let productEle = $("#productPage .item");
+  let continueBtn = $("#productPage .action-buttons .continue");
+  let skipBtn = $("#productPage .action-buttons .skip");
+
   productEle.on("click", function () {
-    productEle.removeClass("selected");
-    $(this).addClass("selected");
+    $(this).toggleClass("selected");
 
     if (productEle.hasClass("selected")) {
-      $("#productPage .action-buttons .continue").removeClass("hidden");
-      $("#productPage .action-buttons .skip").addClass("hidden");
+      continueBtn.removeClass("hidden");
+      skipBtn.addClass("hidden");
+    } else {
+      continueBtn.addClass("hidden");
+      skipBtn.removeClass("hidden");
     }
   });
 
-
   $('.search__category').on('change', function () {
     productEle.removeClass('selected');
-    $("#productPage .action-buttons .continue").addClass("hidden");
-    $("#productPage .action-buttons .skip").removeClass("hidden");
+    continueBtn.addClass("hidden");
+    skipBtn.removeClass("hidden");
     let selectedOption = $(this).children("option:selected").val();
     switch (selectedOption) {
       case "men":

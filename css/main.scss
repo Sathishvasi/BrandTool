@@ -662,11 +662,6 @@ h6 {
     }
   }
 
-  .sms-content,
-  .push-content {
-    display: none;
-  }
-
   .tabs {
     display: flex;
     align-items: center;
@@ -688,7 +683,6 @@ h6 {
       &.active {
         background: #313131;
         border: 2px solid rgb(148, 183, 212);
-        cursor: default;
       }
 
       img {
@@ -708,6 +702,7 @@ h6 {
     .row {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
 
       .tag {
         width: 300px;
@@ -798,8 +793,8 @@ h6 {
   }
 }
 
-#outputPage.mail-active {
-  .mail-content {
+#outputPage.email-active {
+  .email-content {
     display: block;
   }
 
@@ -814,7 +809,7 @@ h6 {
     display: block;
   }
 
-  .mail-content,
+  .email-content,
   .push-content {
     display: none;
   }
@@ -825,7 +820,7 @@ h6 {
     display: block;
   }
 
-  .mail-content,
+  .email-content,
   .sms-content {
     display: none;
   }

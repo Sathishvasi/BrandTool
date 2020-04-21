@@ -1,12 +1,17 @@
 $(document).ready(function () {
-  var categoryEle = $("#personCategory .item");
+  let categoryEle = $("#personCategory .item");
+  let continueBtn = $("#personCategory .action-buttons .continue");
+  let skipBtn = $("#personCategory .action-buttons .skip");
+
   categoryEle.on("click", function () {
-    categoryEle.removeClass("selected");
-    $(this).addClass("selected");
+    $(this).toggleClass("selected");
 
     if (categoryEle.hasClass("selected")) {
-      $("#personCategory .action-buttons .continue").removeClass("hidden");
-      $("#personCategory .action-buttons .skip").addClass("hidden");
+      continueBtn.removeClass("hidden");
+      skipBtn.addClass("hidden");
+    } else {
+      continueBtn.addClass("hidden");
+      skipBtn.removeClass("hidden");
     }
   });
 });
