@@ -3,6 +3,7 @@ $gray: #7b7b7b;
 $font-gray: #6a6a6a;
 $blue: #326ec8;
 $sidebar-width: 340px;
+$title-color: #3f3f3f;
 
 @font-face {
   font-family: "allerLT";
@@ -128,6 +129,8 @@ h6 {
       text-transform: uppercase;
       text-align: center;
       margin-bottom: 3rem;
+      color: $title-color;
+      font-size: 28px;
     }
   }
 }
@@ -279,7 +282,6 @@ h6 {
 .calendar-input-container {
   .page-content {
     display: flex;
-    align-items: center;
   }
 
   #calendarEvents {
@@ -298,6 +300,7 @@ h6 {
     box-shadow: none;
     color: $font-gray;
     position: relative;
+    margin-top: 20px;
   }
 
   .calendar-sidebar {
@@ -356,7 +359,11 @@ h6 {
       padding-bottom: 0;
 
       th[colspan="7"] {
-        text-transform: capitalize;
+        text-transform: uppercase;
+        transform: translateY(-14px);
+        font-size: 28px;
+        color: $title-color;
+        font-weight: bold;
       }
 
       .calendar-today {
@@ -384,7 +391,7 @@ h6 {
         margin-bottom: 30px;
 
         p {
-          color: #000000;
+          color: #565656;
           font-size: 25px;
         }
       }
@@ -596,19 +603,22 @@ h6 {
 /** Output page**/
 #outputPage {
 
-  .score-details {
-    display: none;
-    margin-top: 100px;
-    position: relative;
+  h2 {
+    margin-bottom: 2.5rem;
+  }
 
-    &>h3 {
-      position: absolute;
-      top: -45px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #6d6d6d;
-      font-size: 23px;
-    }
+  .flipster {
+    overflow-y: hidden;
+  }
+
+  .flipster--carousel .flipster__item--past-1,
+  .flipster--carousel .flipster__item--future-1 {
+    opacity: .5;
+  }
+
+  .score-details {
+    margin-top: 15px;
+    display: flex;
 
     .target,
     .progress {
@@ -616,23 +626,24 @@ h6 {
     }
 
     .progress {
-      margin-top: 5px;
+      margin-top: 10px;
 
       .perc {
         position: absolute;
         display: none;
         top: 0;
-        line-height: 30px;
-        right: 10px;
+        line-height: 25px;
+        right: 7px;
+        font-size: 15px;
       }
 
       .container {
         position: relative;
-        width: 80%;
-        height: 30px;
-        background-color: rgba(0, 0, 0, .5);
+        width: 90%;
+        height: 25px;
+        background-color: rgba(0, 0, 0, 0.5);
         border-radius: 4px;
-        margin: 20px 0;
+        margin: 19px 5px;
       }
 
       .container:after {
@@ -650,6 +661,9 @@ h6 {
         line-height: 30px;
         text-align: left;
         color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
       .fillmult span {
@@ -657,6 +671,7 @@ h6 {
 
         b {
           font-weight: normal;
+          font-size: 13px;
         }
       }
     }
@@ -666,6 +681,7 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 
     .item {
       width: 70px;
@@ -697,21 +713,19 @@ h6 {
   }
 
   .taglines {
-    margin-top: 2.5rem;
-
     .row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-
       .tag {
-        width: 300px;
-        height: 120px;
+        width: 500px;
+        height: auto;
         padding: 1rem;
         margin: 1.2rem;
         background: #fff;
         border-radius: 10px;
         border: 2px solid rgb(228, 228, 228);
+
+        h3 {
+          font-size: 20px;
+        }
 
         &-input {
           position: relative;
@@ -721,7 +735,7 @@ h6 {
             width: 80%;
             margin: 0 auto;
             display: block;
-            padding: 4px 10px;
+            padding: 3px 10px;
             font-size: 18px;
             border-radius: 5px;
             border: 1px solid #7b7b7b;
@@ -734,7 +748,7 @@ h6 {
             height: 20px;
             top: 50%;
             transform: translateY(-50%);
-            right: 33px;
+            right: 54px;
             cursor: pointer;
           }
         }
@@ -776,20 +790,10 @@ h6 {
         }
 
         .actions {
-          margin-top: 0.9rem;
+          margin-top: 17px;
         }
       }
     }
-  }
-}
-
-#outputPage.show-progress {
-  .tagline-details {
-    display: none;
-  }
-
-  .score-details {
-    display: flex;
   }
 }
 
@@ -800,7 +804,7 @@ h6 {
 
   .sms-content,
   .push-content {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -811,7 +815,7 @@ h6 {
 
   .email-content,
   .push-content {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -822,7 +826,7 @@ h6 {
 
   .email-content,
   .sms-content {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -842,7 +846,7 @@ canvas {
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin: 20px 0 50px;
+  margin: 20px 0 20px;
 }
 
 #tierPointsValue {
@@ -871,6 +875,7 @@ canvas {
 
 .totalTierPoints {
   font-size: 30px;
+  margin-top: -8px;
 }
 
 

@@ -134,6 +134,8 @@ h6 {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 3rem;
+  color: #3f3f3f;
+  font-size: 28px;
 }
 
 .keyword__input,
@@ -297,9 +299,6 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .calendar-input-container #calendarEvents {
@@ -321,6 +320,7 @@ h6 {
           box-shadow: none;
   color: #6a6a6a;
   position: relative;
+  margin-top: 20px;
 }
 
 .calendar-input-container .calendar-sidebar .calendar-months .month {
@@ -377,7 +377,12 @@ h6 {
 }
 
 .calendar-input-container #calendarEvents .calendar-inner th[colspan="7"] {
-  text-transform: capitalize;
+  text-transform: uppercase;
+  -webkit-transform: translateY(-14px);
+          transform: translateY(-14px);
+  font-size: 28px;
+  color: #3f3f3f;
+  font-weight: bold;
 }
 
 .calendar-input-container #calendarEvents .calendar-inner .calendar-today {
@@ -413,7 +418,7 @@ h6 {
 }
 
 .calendar-input-container #calendarEvents .calendar-events .event-header p {
-  color: #000000;
+  color: #565656;
   font-size: 25px;
 }
 
@@ -622,20 +627,24 @@ h6 {
 }
 
 /** Output page**/
-#outputPage .score-details {
-  display: none;
-  margin-top: 100px;
-  position: relative;
+#outputPage h2 {
+  margin-bottom: 2.5rem;
 }
 
-#outputPage .score-details > h3 {
-  position: absolute;
-  top: -45px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  color: #6d6d6d;
-  font-size: 23px;
+#outputPage .flipster {
+  overflow-y: hidden;
+}
+
+#outputPage .flipster--carousel .flipster__item--past-1,
+#outputPage .flipster--carousel .flipster__item--future-1 {
+  opacity: .5;
+}
+
+#outputPage .score-details {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #outputPage .score-details .target,
@@ -646,24 +655,25 @@ h6 {
 }
 
 #outputPage .score-details .progress {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 #outputPage .score-details .progress .perc {
   position: absolute;
   display: none;
   top: 0;
-  line-height: 30px;
-  right: 10px;
+  line-height: 25px;
+  right: 7px;
+  font-size: 15px;
 }
 
 #outputPage .score-details .progress .container {
   position: relative;
-  width: 80%;
-  height: 30px;
+  width: 90%;
+  height: 25px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 4px;
-  margin: 20px 0;
+  margin: 19px 5px;
 }
 
 #outputPage .score-details .progress .container:after {
@@ -681,6 +691,15 @@ h6 {
   line-height: 30px;
   text-align: left;
   color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #outputPage .score-details .progress .fillmult span {
@@ -689,6 +708,7 @@ h6 {
 
 #outputPage .score-details .progress .fillmult span b {
   font-weight: normal;
+  font-size: 13px;
 }
 
 #outputPage .tabs {
@@ -701,6 +721,7 @@ h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 10px;
 }
 
 #outputPage .tabs .item {
@@ -738,29 +759,18 @@ h6 {
   display: none;
 }
 
-#outputPage .taglines {
-  margin-top: 2.5rem;
-}
-
-#outputPage .taglines .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
 #outputPage .taglines .row .tag {
-  width: 300px;
-  height: 120px;
+  width: 500px;
+  height: auto;
   padding: 1rem;
   margin: 1.2rem;
   background: #fff;
   border-radius: 10px;
   border: 2px solid #e4e4e4;
+}
+
+#outputPage .taglines .row .tag h3 {
+  font-size: 20px;
 }
 
 #outputPage .taglines .row .tag-input {
@@ -772,7 +782,7 @@ h6 {
   width: 80%;
   margin: 0 auto;
   display: block;
-  padding: 4px 10px;
+  padding: 3px 10px;
   font-size: 18px;
   border-radius: 5px;
   border: 1px solid #7b7b7b;
@@ -786,7 +796,7 @@ h6 {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  right: 33px;
+  right: 54px;
   cursor: pointer;
 }
 
@@ -830,17 +840,7 @@ h6 {
 }
 
 #outputPage .taglines .row .edit-mode .actions {
-  margin-top: 0.9rem;
-}
-
-#outputPage.show-progress .tagline-details {
-  display: none;
-}
-
-#outputPage.show-progress .score-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin-top: 17px;
 }
 
 #outputPage.email-active .email-content {
@@ -849,7 +849,7 @@ h6 {
 
 #outputPage.email-active .sms-content,
 #outputPage.email-active .push-content {
-  display: none;
+  display: none !important;
 }
 
 #outputPage.sms-active .sms-content {
@@ -858,7 +858,7 @@ h6 {
 
 #outputPage.sms-active .email-content,
 #outputPage.sms-active .push-content {
-  display: none;
+  display: none !important;
 }
 
 #outputPage.push-active .push-content {
@@ -867,7 +867,7 @@ h6 {
 
 #outputPage.push-active .email-content,
 #outputPage.push-active .sms-content {
-  display: none;
+  display: none !important;
 }
 
 /** Output score chart **/
@@ -892,7 +892,7 @@ canvas {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 20px 0 50px;
+  margin: 20px 0 20px;
 }
 
 #tierPointsValue {
@@ -923,6 +923,7 @@ canvas {
 
 .totalTierPoints {
   font-size: 30px;
+  margin-top: -8px;
 }
 
 /** Modal **/
