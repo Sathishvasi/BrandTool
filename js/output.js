@@ -21,7 +21,7 @@ $(document).ready(function () {
         // Content enable
         $('#outputPage.page-content').addClass(activeTab + '-active');
         // Left Banner Image enable
-        $('.left-nav .left-nav__image img').attr('src', 'images/' + activeTab + '-banner.png');
+        $('.output-left-nav .left-nav__image img').attr('src', 'images/' + activeTab + '-banner.png');
     });
 
     function renderTaglineCards(type, val, order) {
@@ -36,6 +36,13 @@ $(document).ready(function () {
         val.brandCopywritingPrase.forEach(function (tagData, index) {
             let id = index + 1;
             let uniqueID = order.toString()+id.toString();
+
+            // Scores calc
+            let formalityScore = (JSON.parse(tagData.formalityScore).toFixed(1)/1)*100;
+            let frustationScore = (JSON.parse(tagData.frustationScore).toFixed(1)/1)*100;
+            let politenessScore = (JSON.parse(tagData.politenessScore).toFixed(1)/1)*100;
+            let totalscore = (JSON.parse(tagData.totalscore).toFixed(1)/1)*100;
+
             $(`#taglineSlider${order} .row`).append(`<li class="card${id}" data-flip-title="Item Title ${id}">
             <div class="tag">
                 <div class="tag-input">
@@ -51,7 +58,7 @@ $(document).ready(function () {
                     <div class="target">
                         <div id="tierPointsValue${uniqueID}" class="target-chart" data-percent="">
                             <div class="target-percentage">
-                                <div id="totalPoints${uniqueID}" class="totalTierPoints" data-value="68"></div>
+                                <div id="totalPoints${uniqueID}" class="totalTierPoints" data-value="${totalscore}"></div>
                                 <div class="points-random">Total Score</div>
                             </div>
                         </div>
@@ -63,17 +70,17 @@ $(document).ready(function () {
                             </div>
                         </div>
                         <div id="category" class="container">
-                            <div class="fillmult" data-width="50%">
+                            <div class="fillmult" data-width="${formalityScore}%">
                                 <span><b>Formality</b></span>
                             </div>
                         </div>
                         <div id="category" class="container">
-                            <div class="fillmult" data-width="70%">
+                            <div class="fillmult" data-width="${politenessScore}%">
                                 <span><b>Politeness</b></span>
                             </div>
                         </div>
                         <div id="category" class="container">
-                            <div class="fillmult" data-width="25%">
+                            <div class="fillmult" data-width="${frustationScore}%">
                                 <span><b>Frustation</b></span>
                             </div>
                         </div>

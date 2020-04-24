@@ -3,15 +3,6 @@ $(document).ready(function () {
   let continueBtn = $("#personCategory .action-buttons .continue");
   let skipBtn = $("#personCategory .action-buttons .skip");
 
-  categoryEle.on("click", function () {
-    $(this).toggleClass("selected");
+  checkSelectedValue(categoryEle,'selectedPerson',continueBtn,skipBtn);
 
-    if (categoryEle.hasClass("selected")) {
-      continueBtn.removeClass("hidden");
-      skipBtn.addClass("hidden");
-    } else {
-      continueBtn.addClass("hidden");
-      skipBtn.removeClass("hidden");
-    }
-  });
 });

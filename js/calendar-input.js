@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    localStorage.clear();
+
     // Calendar Trigger
     $('#calendarEvents').evoCalendar({
         todayHighlight: true,
@@ -70,16 +70,41 @@ $(document).ready(function () {
         }
     });
 
+    // On load Getting Local Custom events
+    let localCustomEvents = [];
+    if (localStorage.getItem('selectedCustomEvent') && JSON.parse(localStorage.getItem('selectedCustomEvent').length)) {
+        localCustomEvents = JSON.parse(localStorage.getItem('selectedCustomEvent'));
+        localCustomEvents.forEach((val, index) => {
+            $("#calendarEvents").evoCalendar('addCalendarEvent', [val])
+        });
+    }
+
     // Submits event to calendar
     $(document).on('click', '.eventAddButton', function () {
         if ($('#myModal .event-name').val() != '') {
-            $("#calendarEvents").evoCalendar('addCalendarEvent', [{
+            let customEventArray = [];
+            let customEvent = {
                 name: $(this).siblings('input').val(),
                 date: $(this).siblings('p').text().replace(/,/g, '').replace(/ /g, '/'),
                 type: "event",
                 everyYear: false
-            }]);
+            }
+            // Current custom event
+            customEventArray.push(customEvent);
+
+            // Setting Local custom events 
+            customEventArray = customEventArray.concat(localCustomEvents);
+            localStorage.setItem('selectedCustomEvent', JSON.stringify(customEventArray));
+
+            // Add custom event Callback
+            $("#calendarEvents").evoCalendar('addCalendarEvent', [customEvent]);
+
+            // Hides Modal after add event
             $('#myModal').hide();
+
+            // Redirects to next page
+            localStorage.setItem('calendarInput', customEvent.name);
+            window.location.href = '/person.html';
         } else {
             $('.modal-body span').show();
         }

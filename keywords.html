@@ -18,7 +18,9 @@
   <div class="wrapper">
     <div class="left-nav">
       <div class="left-nav__header">
-        <img src="images/logo.png" alt="Logo" />
+        <a href="index.html">
+          <img src="images/logo.png" alt="Logo" />
+        </a>
         <p>Brand Copy Writing</p>
       </div>
       <div class="left-nav__image">
@@ -28,20 +30,27 @@
       <div class="left-nav__timeline">
         <a href="/index.html"></a>
         <a href="/person.html"></a>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
+        <a href="/product.html"></a>
+        <a href="/notification.html"></a>
+        <a href="/customer.html"></a>
         <a href="#" class="active">6</a>
       </div>
     </div>
     <div class="page-content padding" id="keywordPage">
       <h2 class="section-title">Keywords</h2>
       <div class="keyword">
-        <button class="brand-btn">Add Input</button>
-        <input type="text" class="keyword__input" id="keyword1" placeholder="Add keywords..." />
+        <!-- <button class="brand-btn">Add Input</button> -->
+        <img class="keyword__add-btn" src="/images/black-elipsis-add.svg" alt="Add Input" />
+        <div class="keyword__input-wrapper">
+          <input type="text" class="keyword__input" id="keyword1" placeholder="Add keywords..." />
+          <img class="keyword__delete-btn" src="/images/delete-icon.svg" alt="Delete Keyword" />
+        </div>
       </div>
       <div class="action-buttons">
-        <img class="action-button continue" src="images/next.svg" alt="next" />
+        <img class="action-button continue hidden" src="images/next.svg" alt="next" />
+        <a href="/output.html.html">
+          <img class="action-button skip" src="images/skip.svg" alt="next" />
+        </a>
       </div>
     </div>
   </div>
