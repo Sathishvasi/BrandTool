@@ -458,6 +458,24 @@ h6 {
     margin-bottom: 1rem;
   }
 
+  .noProduct {
+    display: none;
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  .grid {
+    .row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .item {
+      height: 174px;
+      margin: 0 12px;
+    }
+  }
+
   .search {
     display: flex;
     width: 100%;
@@ -580,12 +598,12 @@ h6 {
       top: 4px;
     }
 
-    &__input-wrapper{
+    &__input-wrapper {
       position: relative;
       margin-bottom: 25px;
     }
 
-    &__delete-btn{
+    &__delete-btn {
       width: 25px;
       position: absolute;
       top: 50%;

@@ -6,21 +6,24 @@
         "phrase": "Stay safe with us",
         "formalityScore": "0.62244",
         "totalscore": "0.48499",
-        "frustationScore": "0.61168"
+        "frustationScore": "0.61168",
+        "cardAlignment": "right"
       },
       {
         "politenessScore": "0.66391",
         "phrase": "Caring for Life",
         "formalityScore": "0.81091",
         "totalscore": "0.69098",
-        "frustationScore": "0.18841"
+        "frustationScore": "0.18841",
+        "cardAlignment": "left"
       },
       {
         "politenessScore": "0.66391",
         "phrase": "Your health is our priority",
         "formalityScore": "0.81091",
         "totalscore": "0.69098",
-        "frustationScore": "0.18841"
+        "frustationScore": "0.18841",
+        "cardAlignment": "center"
       }
     ],
     "calendarEvent": "Diwali",
@@ -36,21 +39,24 @@
         "phrase": "Drive with the legend",
         "formalityScore": "0.62244",
         "totalscore": "0.48499",
-        "frustationScore": "0.61168"
+        "frustationScore": "0.61168",
+        "cardAlignment": "right"
       },
       {
         "politenessScore": "0.76759",
         "phrase": "Handful of adventure journey",
         "formalityScore": "0.48019",
         "totalscore": "0.59332",
-        "frustationScore": "0.45816"
+        "frustationScore": "0.45816",
+        "cardAlignment": "left"
       },
       {
         "politenessScore": "0.66391",
         "phrase": "Evo Speed Ability",
         "formalityScore": "0.81091",
         "totalscore": "0.69098",
-        "frustationScore": "0.18841"
+        "frustationScore": "0.18841",
+        "cardAlignment": "center"
       }
     ],
     "calendarEvent": "Diwali",

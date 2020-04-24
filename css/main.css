@@ -475,6 +475,25 @@ h6 {
   margin-bottom: 1rem;
 }
 
+#productPage .noProduct {
+  display: none;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#productPage .grid .row {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#productPage .grid .item {
+  height: 174px;
+  margin: 0 12px;
+}
+
 #productPage .search {
   display: -webkit-box;
   display: -ms-flexbox;

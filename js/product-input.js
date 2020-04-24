@@ -40,6 +40,8 @@ $(document).ready(function () {
   });
 
   function renderProducts(imgArray, titleArray, path, selectedOption) {
+    $('.item').show();
+    $('.noProduct').hide();
     $('#productItems .row .item').each(function (index, val) {
       $(val).find('.preview-img').attr('src', path + imgArray[index]);
       $(val).find('.item__name').text(titleArray[index]);
@@ -55,5 +57,37 @@ $(document).ready(function () {
       skipBtn ? skipBtn.addClass("hidden") : '';
     }
   }
+
+  $('.search__input .search-icon').on('click', function () {
+    let productMacth = 0;
+    $('.item').show();
+    $('.item').each(function (index, val) {
+      let eleTitle = $(val).find('.item__name').text();
+      let inputVal = $('.search__input input').val() === '' ? ' ' : $('.search__input input').val();
+
+      if (eleTitle.toLowerCase().replace(/\s+/g, '').includes(inputVal.toLowerCase())) {
+        console.log(eleTitle);
+        productMacth++;
+      } else {
+        $(val).hide();
+      }
+    })
+    if (productMacth === 0) {
+      $('.item').hide();
+      $('.noProduct').show();
+    } else {
+      // $('.item').show();
+      $('.noProduct').hide();
+    }
+  });
+
+  $('.search__input input').on('keyup', function (event) {
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        $('.search__input .search-icon').click();
+    }
+});
 
 });

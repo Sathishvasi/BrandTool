@@ -1,6 +1,10 @@
 $(document).ready(function () {
 
     $.getJSON("../data/output.json", function (response) {
+
+        // Sorts card alignment
+        response = response.sort((a, b) => parseFloat(a.cardAlignment) - parseFloat(b.cardAlignment));
+
         response.forEach(function (val, index) {
             switch (val.notificationType) {
                 case 'Email':
@@ -35,13 +39,13 @@ $(document).ready(function () {
         // Tagline card render
         val.brandCopywritingPrase.forEach(function (tagData, index) {
             let id = index + 1;
-            let uniqueID = order.toString()+id.toString();
+            let uniqueID = order.toString() + id.toString();
 
             // Scores calc
-            let formalityScore = (JSON.parse(tagData.formalityScore).toFixed(1)/1)*100;
-            let frustationScore = (JSON.parse(tagData.frustationScore).toFixed(1)/1)*100;
-            let politenessScore = (JSON.parse(tagData.politenessScore).toFixed(1)/1)*100;
-            let totalscore = (JSON.parse(tagData.totalscore).toFixed(1)/1)*100;
+            let formalityScore = (JSON.parse(tagData.formalityScore).toFixed(1) / 1) * 100;
+            let frustationScore = (JSON.parse(tagData.frustationScore).toFixed(1) / 1) * 100;
+            let politenessScore = (JSON.parse(tagData.politenessScore).toFixed(1) / 1) * 100;
+            let totalscore = (JSON.parse(tagData.totalscore).toFixed(1) / 1) * 100;
 
             $(`#taglineSlider${order} .row`).append(`<li class="card${id}" data-flip-title="Item Title ${id}">
             <div class="tag">
@@ -109,10 +113,10 @@ $(document).ready(function () {
 
     function scoreProgress(ID) {
         // Score calc logic
-        var dataPercentage = $('#totalPoints'+ID).data('value');
-        $('#totalPoints'+ID).text(dataPercentage)
+        var dataPercentage = $('#totalPoints' + ID).data('value');
+        $('#totalPoints' + ID).text(dataPercentage)
 
-        $("#tierPointsValue"+ID).attr("data-percent", dataPercentage);
+        $("#tierPointsValue" + ID).attr("data-percent", dataPercentage);
         $('.target-chart').easyPieChart({
             animate: 2000,
             lineWidth: 18,
@@ -123,7 +127,7 @@ $(document).ready(function () {
             barColor: "#326ec8"
         });
 
-        $('#outputPage .totalTierPoints'+ID).each(function () {
+        $('#outputPage .totalTierPoints' + ID).each(function () {
             $(this).prop('Counter', 0).animate({
                 Counter: $(this).text()
             }, {
