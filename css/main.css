@@ -372,17 +372,16 @@ h6 {
       -ms-flex: 1;
           flex: 1;
   margin: 0;
-  padding-top: 22px;
+  padding-top: 4rem;
   padding-bottom: 0;
 }
 
 .calendar-input-container #calendarEvents .calendar-inner th[colspan="7"] {
-  text-transform: uppercase;
-  -webkit-transform: translateY(-14px);
-          transform: translateY(-14px);
-  font-size: 28px;
-  color: #3f3f3f;
+  font-size: 23px;
+  color: #6a6a6a;
   font-weight: bold;
+  text-transform: capitalize;
+  padding-bottom: 10px;
 }
 
 .calendar-input-container #calendarEvents .calendar-inner .calendar-today {
@@ -468,6 +467,20 @@ h6 {
 .calendar-input-container #calendarEvents .uncheck-event .event-info::before {
   content: "";
   background-image: none;
+}
+
+#calendar .section-title {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+  padding-top: 2%;
+  margin-bottom: 3rem;
+}
+
+#calendar tr.calendar-body .calendar-day,
+#calendar tr.calendar-header .calendar-header-day {
+  padding: 7px 10px;
 }
 
 /** Products page**/
@@ -671,7 +684,7 @@ h6 {
 }
 
 #outputPage .score-details .progress {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 #outputPage .score-details .progress .perc {
@@ -1062,5 +1075,13 @@ canvas {
   font-weight: bold;
   cursor: pointer;
   line-height: 1em;
+}
+
+#confirmTagline {
+  padding-top: 35vh;
+}
+
+#confirmTagline .modal-body button {
+  margin-top: 10px;
 }
 /*# sourceMappingURL=main.css.map */

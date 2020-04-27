@@ -56,7 +56,7 @@ $(document).ready(function () {
                 <h3 class="title">${tagData.phrase}</h3>
                 <div class="actions">
                     <img class="action edit-tagline" src="images/Group 809.svg" alt="action" />
-                    <img class="action" src="images/Group 808.svg" alt="action" />
+                    <img class="action proceed-tagline" src="images/Group 808.svg" alt="action" />
                 </div>
                 <div class="score-details">
                     <div class="target">
@@ -68,11 +68,6 @@ $(document).ready(function () {
                         </div>
                     </div>
                     <div class="progress">
-                        <div id="category" class="container">
-                            <div class="fillmult" data-width="85%">
-                                <span><b>Category</b></span>
-                            </div>
-                        </div>
                         <div id="category" class="container">
                             <div class="fillmult" data-width="${formalityScore}%">
                                 <span><b>Formality</b></span>
@@ -155,6 +150,17 @@ $(document).ready(function () {
         let rootTag = $(this).closest('.tag');
         rootTag.addClass('edit-mode');
         rootTag.find('.tag-input input').val(rootTag.find('.title').text());
+    });
+
+    // Approve Tagline
+    $(document).on('click', '#outputPage .proceed-tagline', function () {
+        $('#confirmTagline .modal-header h2').text($(this).closest('.tag').find('.title').text());
+        $('#confirmTagline').show();
+    });
+
+
+    $(document).on('click', '.closeModal', function () {
+        $('#confirmTagline').hide();
     });
 
     $(document).on('keyup', '#outputPage .tag-input input', function (event) {

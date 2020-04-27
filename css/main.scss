@@ -355,15 +355,15 @@ h6 {
       box-shadow: none;
       flex: 1;
       margin: 0;
-      padding-top: 22px;
+      padding-top: 4rem;
       padding-bottom: 0;
 
       th[colspan="7"] {
-        text-transform: uppercase;
-        transform: translateY(-14px);
-        font-size: 28px;
-        color: $title-color;
+        font-size: 23px;
+        color: #6a6a6a;
         font-weight: bold;
+        text-transform: capitalize;
+        padding-bottom: 10px;
       }
 
       .calendar-today {
@@ -449,6 +449,21 @@ h6 {
         }
       }
     }
+  }
+}
+
+#calendar {
+  .section-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(50px);
+    padding-top: 2%;
+    margin-bottom: 3rem;
+  }
+
+  tr.calendar-body .calendar-day,
+  tr.calendar-header .calendar-header-day {
+    padding: 7px 10px;
   }
 }
 
@@ -611,28 +626,6 @@ h6 {
       right: 15px;
       cursor: pointer;
     }
-
-    // button {
-    //   position: absolute;
-    //   right: 0;
-    //   font-size: 18px;
-    //   top: -80px;
-    //   right: -60px;
-    //   padding-left: 45px;
-
-    //   &:before {
-    //     content: '';
-    //     background-image: url(/images/gray-elipsis-add.svg);
-    //     display: inline-block;
-    //     position: absolute;
-    //     left: 10px;
-    //     height: 25px;
-    //     width: 25px;
-    //     background-size: contain;
-    //     background-repeat: no-repeat;
-    //     top: 10px;
-    //   }
-    // }
   }
 }
 
@@ -662,7 +655,7 @@ h6 {
     }
 
     .progress {
-      margin-top: 10px;
+      margin-top: 30px;
 
       .perc {
         position: absolute;
@@ -1030,4 +1023,12 @@ canvas {
   font-weight: bold;
   cursor: pointer;
   line-height: 1em;
+}
+
+// Modal in Output page
+#confirmTagline{
+  padding-top: 35vh;
+  .modal-body button{
+    margin-top: 10px;
+  }
 }
