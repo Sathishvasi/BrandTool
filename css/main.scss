@@ -287,6 +287,7 @@ h6 {
   #calendarEvents {
     display: flex;
     margin: 0;
+    margin-top: 20px;
   }
 
   #sidebarToggler,
@@ -300,10 +301,11 @@ h6 {
     box-shadow: none;
     color: $font-gray;
     position: relative;
-    margin-top: 20px;
   }
 
   .calendar-sidebar {
+    padding-top: 3.6rem;
+
     .calendar-months {
       .month {
         text-align: center;
@@ -317,6 +319,10 @@ h6 {
         background-color: #bcbcbc;
         color: #ffffff;
       }
+    }
+    .calendar-year{
+      padding-top: 0px;
+      padding-bottom: 8px;
     }
   }
 
@@ -382,12 +388,14 @@ h6 {
       flex-direction: column;
       align-items: center;
       padding-left: 0;
+      padding-top: 65px;
 
       .continue-btn {
         display: none;
       }
 
       .event-header {
+        
         margin-bottom: 30px;
 
         p {
@@ -701,6 +709,9 @@ h6 {
         b {
           font-weight: normal;
           font-size: 13px;
+          position: absolute;
+          left: 10px;
+          top: -2px;
         }
       }
     }
@@ -916,7 +927,7 @@ canvas {
   /* Stay in place */
   z-index: 1;
   /* Sit on top */
-  padding-top: 100px;
+  padding-top: 30vh;
   /* Location of the box */
   left: 0;
   top: 0;
@@ -946,12 +957,12 @@ canvas {
   }
 
   &-header {
-    padding: 7px 16px;
+    padding: 10px 20px;
     background-color: #000000;
     color: white;
 
     h2 {
-      font-size: 23px;
+      font-size: 15px;
       font-weight: normal;
     }
   }
@@ -965,8 +976,9 @@ canvas {
     align-items: center;
 
     p {
-      font-size: 20px;
+      font-size: 25px;
       margin-bottom: 10px;
+      text-align: center;
     }
 
     span {
@@ -1019,16 +1031,24 @@ canvas {
 .close {
   color: white;
   float: right;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bold;
   cursor: pointer;
-  line-height: 1em;
+  line-height: 0;
+  padding-top: 10px;
 }
 
 // Modal in Output page
-#confirmTagline{
+#confirmTagline {
   padding-top: 35vh;
-  .modal-body button{
-    margin-top: 10px;
+
+  .modal-header h2 {
+    text-align: center;
+  }
+
+  .modal-body {
+    button {
+      margin-top: 10px;
+    }
   }
 }

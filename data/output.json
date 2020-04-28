@@ -1,67 +1,88 @@
 [{
-    "firstName": "Aaron",
-    "lastName": "Purser",
-    "brandCopywritingPrase": [{
-        "politenessScore": "0.27892",
-        "phrase": "Stay safe with us",
-        "formalityScore": "0.62244",
-        "totalscore": "0.48499",
-        "frustationScore": "0.61168",
-        "cardAlignment": "right"
-      },
-      {
-        "politenessScore": "0.66391",
-        "phrase": "Caring for Life",
-        "formalityScore": "0.81091",
-        "totalscore": "0.69098",
-        "frustationScore": "0.18841",
-        "cardAlignment": "left"
-      },
-      {
-        "politenessScore": "0.66391",
-        "phrase": "Your health is our priority",
-        "formalityScore": "0.81091",
-        "totalscore": "0.69098",
-        "frustationScore": "0.18841",
-        "cardAlignment": "center"
-      }
-    ],
-    "calendarEvent": "Diwali",
-    "id": "1",
-    "notificationType": "Email",
-    "campaignIntent": "retention"
-  },
-  {
-    "firstName": "Aaron",
-    "lastName": "Purser",
-    "brandCopywritingPrase": [{
-        "politenessScore": "0.27892",
-        "phrase": "Drive with the legend",
-        "formalityScore": "0.62244",
-        "totalscore": "0.48499",
-        "frustationScore": "0.61168",
-        "cardAlignment": "right"
-      },
-      {
-        "politenessScore": "0.76759",
-        "phrase": "Handful of adventure journey",
-        "formalityScore": "0.48019",
-        "totalscore": "0.59332",
-        "frustationScore": "0.45816",
-        "cardAlignment": "left"
-      },
-      {
-        "politenessScore": "0.66391",
-        "phrase": "Evo Speed Ability",
-        "formalityScore": "0.81091",
-        "totalscore": "0.69098",
-        "frustationScore": "0.18841",
-        "cardAlignment": "center"
-      }
-    ],
-    "calendarEvent": "Diwali",
-    "id": "2",
-    "notificationType": "SMS",
-    "campaignIntent": "retention"
-  }
-]
+  "firstName": "Steve",
+  "lastName": "Finn",
+  "campaignIntent": "retention",
+  "brandCopywritingPrase": [{
+    "politenessScore": "0.7564",
+    "phrase": "Hope Lives Here.",
+    "formalityScore": "0.7144",
+    "cardAlignment": "2",
+    "totalscore": "0.71048",
+    "frustationScore": "0.04017"
+  }, {
+    "politenessScore": "0.90966",
+    "phrase": "Labour brings Prosperity",
+    "formalityScore": "0.07766",
+    "cardAlignment": "1",
+    "totalscore": "0.41521",
+    "frustationScore": "0.16283"
+  }, {
+    "politenessScore": "0.54098",
+    "phrase": "Take It Easy This Labour Day",
+    "formalityScore": "0.42702",
+    "cardAlignment": "3",
+    "totalscore": "0.4847",
+    "frustationScore": "0.78987"
+  }],
+  "calendarEvent": "Labour Day",
+  "id": "1",
+  "notificationType": "Email"
+}, {
+  "firstName": "Pearle",
+  "lastName": "Duerden",
+  "campaignIntent": "retention",
+  "brandCopywritingPrase": [{
+    "politenessScore": "0.65723",
+    "phrase": "Inspiring Better Health",
+    "formalityScore": "0.64428",
+    "cardAlignment": "1",
+    "totalscore": "0.6239",
+    "frustationScore": "0.11314"
+  }, {
+    "politenessScore": "0.76257",
+    "phrase": "Hope you Relax this Labour Day",
+    "formalityScore": "0.84099",
+    "cardAlignment": "2",
+    "totalscore": "0.78290",
+    "frustationScore": "0.32663"
+  }, {
+    "politenessScore": "0.66839",
+    "phrase": "We Honour The Labour Today and Everyday",
+    "formalityScore": "0.38227",
+    "cardAlignment": "3",
+    "totalscore": "0.50192",
+    "frustationScore": "0.4863"
+  }],
+  "calendarEvent": "Labour Day",
+  "id": "2",
+  "notificationType": "SMS"
+}, {
+  "firstName": "Amy",
+  "lastName": "Jones",
+  "campaignIntent": "retention",
+  "brandCopywritingPrase": [{
+    "politenessScore": "0.27792",
+    "phrase": " Tommorrow brings us all closer",
+    "formalityScore": "0.73795",
+    "cardAlignment": "3",
+    "totalscore": "0.5382",
+    "frustationScore": "0.42462"
+  }, {
+    "politenessScore": "0.09857",
+    "phrase": "Live with Elegance.",
+    "formalityScore": "0.6678",
+    "cardAlignment": "1",
+    "totalscore": "0.418",
+    "frustationScore": "0.23248"
+  }, {
+    "politenessScore": "0.17126",
+    "phrase": " Keep Discovering. ",
+    "formalityScore": "0.42133",
+    "cardAlignment": "2",
+    "totalscore": "0.59082",
+    "frustationScore": "0.87893"
+  }],
+  "calendarEvent": "Labour Day",
+  "id": "3",
+  "notificationType": "PushNotification"
+}]

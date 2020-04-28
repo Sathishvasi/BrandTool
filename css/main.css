@@ -306,6 +306,7 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   margin: 0;
+  margin-top: 20px;
 }
 
 .calendar-input-container #sidebarToggler,
@@ -320,7 +321,10 @@ h6 {
           box-shadow: none;
   color: #6a6a6a;
   position: relative;
-  margin-top: 20px;
+}
+
+.calendar-input-container .calendar-sidebar {
+  padding-top: 3.6rem;
 }
 
 .calendar-input-container .calendar-sidebar .calendar-months .month {
@@ -334,6 +338,11 @@ h6 {
 .calendar-input-container .calendar-sidebar .calendar-months .active-month {
   background-color: #bcbcbc;
   color: #ffffff;
+}
+
+.calendar-input-container .calendar-sidebar .calendar-year {
+  padding-top: 0px;
+  padding-bottom: 8px;
 }
 
 .calendar-input-container #calendarEvents .event-wrapper {
@@ -406,6 +415,7 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 0;
+  padding-top: 65px;
 }
 
 .calendar-input-container #calendarEvents .calendar-events .continue-btn {
@@ -738,6 +748,9 @@ h6 {
 #outputPage .score-details .progress .fillmult span b {
   font-weight: normal;
   font-size: 13px;
+  position: absolute;
+  left: 10px;
+  top: -2px;
 }
 
 #outputPage .tabs {
@@ -963,7 +976,7 @@ canvas {
   /* Stay in place */
   z-index: 1;
   /* Sit on top */
-  padding-top: 100px;
+  padding-top: 30vh;
   /* Location of the box */
   left: 0;
   top: 0;
@@ -995,13 +1008,13 @@ canvas {
 }
 
 .modal-header {
-  padding: 7px 16px;
+  padding: 10px 20px;
   background-color: #000000;
   color: white;
 }
 
 .modal-header h2 {
-  font-size: 23px;
+  font-size: 15px;
   font-weight: normal;
 }
 
@@ -1021,8 +1034,9 @@ canvas {
 }
 
 .modal-body p {
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .modal-body span {
@@ -1071,14 +1085,19 @@ canvas {
 .close {
   color: white;
   float: right;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bold;
   cursor: pointer;
-  line-height: 1em;
+  line-height: 0;
+  padding-top: 10px;
 }
 
 #confirmTagline {
   padding-top: 35vh;
+}
+
+#confirmTagline .modal-header h2 {
+  text-align: center;
 }
 
 #confirmTagline .modal-body button {

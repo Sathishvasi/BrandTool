@@ -2,20 +2,28 @@ $(document).ready(function () {
 
     $.getJSON("../data/output.json", function (response) {
 
-        // Sorts card alignment
-        response = response.sort((a, b) => parseFloat(a.cardAlignment) - parseFloat(b.cardAlignment));
-
         response.forEach(function (val, index) {
-            switch (val.notificationType) {
-                case 'Email':
-                    renderTaglineCards('email', val, index);
-                    break;
-                case 'SMS':
-                    renderTaglineCards('sms', val, index);
-                    break;
-                case 'PushNotification':
-                    renderTaglineCards('push', val, index);
-                    break;
+            // Sorts card alignment
+            val.brandCopywritingPrase = val.brandCopywritingPrase.sort((a, b) => parseFloat(a.cardAlignment) - parseFloat(b.cardAlignment));
+
+            // Filters response from selectedNotification
+            let selectedNotification = JSON.parse(localStorage.getItem('selectedNotification'));
+            selectedNotification = selectedNotification.map(function (x) {
+                return x.toLowerCase()
+            });
+
+            if (selectedNotification.includes(val.notificationType.toLowerCase())) {
+                switch (val.notificationType) {
+                    case 'Email':
+                        renderTaglineCards('email', val, index);
+                        break;
+                    case 'SMS':
+                        renderTaglineCards('sms', val, index);
+                        break;
+                    case 'PushNotification':
+                        renderTaglineCards('push', val, index);
+                        break;
+                }
             }
         });
         let firstChild = $('#outputPage .tabs .item:not(.hidden)').eq(0);
@@ -122,24 +130,12 @@ $(document).ready(function () {
             barColor: "#326ec8"
         });
 
-        $('#outputPage .totalTierPoints' + ID).each(function () {
-            $(this).prop('Counter', 0).animate({
-                Counter: $(this).text()
-            }, {
-                duration: 2000,
-                easing: 'swing',
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        });
-
         // Progress Bar logic
-        $('#outputPage .progress .container > div').each(function () {
+        $(`#tierPointsValue${ID}`).closest('.score-details').find('.progress .fillmult').each(function () {
             var width = $(this).data('width');
             $(this).animate({
                 width: width
-            }, 2500);
+            }, 2000);
             $(this).after('<span class="perc">' + width + '</span>');
             $('.perc').delay(2000).fadeIn(1000);
         });
@@ -154,7 +150,7 @@ $(document).ready(function () {
 
     // Approve Tagline
     $(document).on('click', '#outputPage .proceed-tagline', function () {
-        $('#confirmTagline .modal-header h2').text($(this).closest('.tag').find('.title').text());
+        $('#confirmTagline .modal-body p').text($(this).closest('.tag').find('.title').text());
         $('#confirmTagline').show();
     });
 

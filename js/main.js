@@ -21,10 +21,10 @@ $(document).on('click', '.continue', function () {
 
     case path === 'notification.html':
       let notification = [];
-      $('#notificationPage .item.selected').each((index, val) => {
-        notification.push($(val).find('.item__name').attr('id'))
-      });
-      localStorage.setItem('notificationInput', JSON.stringify(notification));
+      // $('#notificationPage .item.selected').each((index, val) => {
+      //   notification.push($(val).find('.item__name').attr('id'))
+      // });
+      // localStorage.setItem('notificationInput', JSON.stringify(notification));
       window.location.href = '/customer.html';
       break;
 
