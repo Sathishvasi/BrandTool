@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $.getJSON("../data/output.json", function (response) {
+    $.getJSON("./data/output.json", function (response) {
 
         response.forEach(function (val, index) {
             // Sorts card alignment
