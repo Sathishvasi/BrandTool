@@ -77,17 +77,17 @@ $(document).ready(function () {
                     </div>
                     <div class="progress">
                         <div id="category" class="container">
-                            <div class="fillmult" data-width="${formalityScore}%">
+                            <div class="fillmult" id="formality" data-width="${formalityScore}%">
                                 <span><b>Formality</b></span>
                             </div>
                         </div>
                         <div id="category" class="container">
-                            <div class="fillmult" data-width="${politenessScore}%">
+                            <div class="fillmult" id="politeness" data-width="${politenessScore}%">
                                 <span><b>Politeness</b></span>
                             </div>
                         </div>
                         <div id="category" class="container">
-                            <div class="fillmult" data-width="${frustationScore}%">
+                            <div class="fillmult" id="frustation" data-width="${frustationScore}%">
                                 <span><b>Frustation</b></span>
                             </div>
                         </div>
@@ -116,11 +116,10 @@ $(document).ready(function () {
 
     function scoreProgress(ID) {
         // Score calc logic
-        var dataPercentage = $('#totalPoints' + ID).data('value');
-        $('#totalPoints' + ID).text(dataPercentage)
+        var dataPercentage = JSON.parse($('#totalPoints' + ID).attr('data-value'));
+        $('#totalPoints' + ID).text(dataPercentage);
 
-        $("#tierPointsValue" + ID).attr("data-percent", dataPercentage);
-        $('.target-chart').easyPieChart({
+        $("#tierPointsValue" + ID).easyPieChart({
             animate: 2000,
             lineWidth: 18,
             scaleColor: false,
@@ -130,12 +129,16 @@ $(document).ready(function () {
             barColor: "#326ec8"
         });
 
+        // Updates Score progress
+        $("#tierPointsValue" + ID).data('easyPieChart').update(dataPercentage);
+
         // Progress Bar logic
         $(`#tierPointsValue${ID}`).closest('.score-details').find('.progress .fillmult').each(function () {
-            var width = $(this).data('width');
+            var width = $(this).attr('data-width');
             $(this).animate({
                 width: width
             }, 2000);
+            $(this).next('.perc').remove();
             $(this).after('<span class="perc">' + width + '</span>');
             $('.perc').delay(2000).fadeIn(1000);
         });
@@ -168,9 +171,27 @@ $(document).ready(function () {
         }
     });
 
+    // Edit value submit
     $(document).on('click', '#outputPage .tag-input img', function () {
-        $(this).closest('.tag').find('.title').text($(this).prev().val());
-        $(this).closest('.tag').removeClass('edit-mode');
+        const rootEle= $(this).closest('.tag');
+
+        rootEle.find('.title').text($(this).prev().val());
+        rootEle.removeClass('edit-mode');
+
+        //Clicked card element ID
+        let cardID = rootEle.find('.score-details .target-chart').attr('id');
+        
+        // Dynamic score
+        $(`#${cardID} .totalTierPoints`).attr('data-value','80');
+
+        // Dynamic progress value
+        rootEle.find('.score-details #formality').attr('data-width','60%');
+        rootEle.find('.score-details #politeness').attr('data-width','80%');
+        rootEle.find('.score-details #frustation').attr('data-width','50%');
+
+        let uniqueID = cardID.substr(cardID.length-2,2);
+        
+        scoreProgress(uniqueID);
     });
 
     // Image update 

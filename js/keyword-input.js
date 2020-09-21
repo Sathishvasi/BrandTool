@@ -2,6 +2,8 @@ $(document).ready(function () {
     let continueBtn = $("#keywordPage .action-buttons .continue");
     let skipBtn = $("#keywordPage .action-buttons .skip");
     $('.keyword__delete-btn').hide();
+
+    // Add btn
     $('.keyword__add-btn').on('click', function () {
         if ($('.keyword input').length <= 5) {
             $('.keyword').append(`<div class="keyword__input-wrapper"><input type="text" class="keyword__input" id="keyword1" placeholder="Add keywords..." /><img class="keyword__delete-btn" src="/images/delete-icon.svg" alt="Delete Keyword" /></div>`);
@@ -12,6 +14,7 @@ $(document).ready(function () {
         }
     });
 
+    // Delete btn
     $(document).on('click', '.keyword__delete-btn', function () {
         $(this).closest('.keyword__input-wrapper').remove();
         if ($('.keyword__input-wrapper').length === 5) {
@@ -21,6 +24,7 @@ $(document).ready(function () {
         }
     });
 
+    // Button logic
     $(document).on('keyup', '.keyword__input', function () {
         $('.keyword__input').each((index, el) => {
             if ($(el).val()) {
