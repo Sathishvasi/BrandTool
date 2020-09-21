@@ -3,7 +3,7 @@ $(document).on('click', '.continue', function () {
   let path = window.location.pathname.replace(/^\/|\/$/g, '');
 
   switch (path != null) {
-    case path === 'index.html' || path === '':
+    case path === 'index.html' || path === '' || path === 'BrandTool':
       localStorage.removeItem('checkedEventValue');
       localStorage.setItem('calendarInput', $('#calendarEvents .event-info p').text());
       window.location.href = 'person.html';
