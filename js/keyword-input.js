@@ -6,7 +6,7 @@ $(document).ready(function () {
     // Add btn
     $('.keyword__add-btn').on('click', function () {
         if ($('.keyword input').length <= 5) {
-            $('.keyword').append(`<div class="keyword__input-wrapper"><input type="text" class="keyword__input" id="keyword1" placeholder="Add keywords..." /><img class="keyword__delete-btn" src="/images/delete-icon.svg" alt="Delete Keyword" /></div>`);
+            $('.keyword').append(`<div class="keyword__input-wrapper"><input type="text" class="keyword__input" id="keyword1" placeholder="Add keywords..." /><img class="keyword__delete-btn" src="./images/delete-icon.svg" alt="Delete Keyword" /></div>`);
             if ($('.keyword input').length === 6) {
                 $(this).hide();
             }
