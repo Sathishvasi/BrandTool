@@ -460,7 +460,7 @@ h6 {
   left: 10px;
   height: 25px;
   width: 25px;
-  background-image: url("/images/checked-circle.png");
+  background-image: url("../images/checked-circle.png");
   background-size: contain;
   background-repeat: no-repeat;
   top: 12px;

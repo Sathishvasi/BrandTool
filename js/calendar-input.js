@@ -104,7 +104,7 @@ $(document).ready(function () {
 
             // Redirects to next page
             localStorage.setItem('calendarInput', customEvent.name);
-            window.location.href = '/person.html';
+            window.location.href = 'person.html';
         } else {
             $('.modal-body span').show();
         }
