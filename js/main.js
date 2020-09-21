@@ -9,17 +9,17 @@ $(document).on('click', '.continue', function () {
       window.location.href = 'person.html';
       break;
 
-    case path === 'person.html':
+    case path === 'person.html' || path === 'BrandTool/person.html':
       localStorage.setItem('personInput', $('#personCategory .item.selected .item__name').text());
       window.location.href = 'product.html';
       break;
 
-    case path === 'product.html':
+    case path === 'product.html' || path === 'BrandTool/product.html':
       localStorage.setItem('productInput', $('#productPage .item.selected .item__name').text());
       window.location.href = 'notification.html';
       break;
 
-    case path === 'notification.html':
+    case path === 'notification.html' || path === 'BrandTool/notification.html':
       let notification = [];
       // $('#notificationPage .item.selected').each((index, val) => {
       //   notification.push($(val).find('.item__name').attr('id'))
@@ -28,12 +28,12 @@ $(document).on('click', '.continue', function () {
       window.location.href = 'customer.html';
       break;
 
-    case path === 'customer.html':
+    case path === 'customer.html' || path === 'BrandTool/customer.html':
       localStorage.setItem('customerInput', $('#customerPage .item.selected .item__name').text());
       window.location.href = 'keywords.html';
       break;
 
-    case path === 'keywords.html':
+    case path === 'keywords.html' || path === 'BrandTool/keywords.html':
       localStorage.setItem('keywordInput', $('#keywordPage .keyword__input').val());
       window.location.href = 'output.html';
       break;
